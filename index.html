@@ -3,80 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>The Neuro Centre</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-
 body {
     margin: 0;
-    background: #f7f6f3;
+    background: #f8f7f5;
     color: #1a1a1a;
     font-family: 'Inter', sans-serif;
+
     display: flex;
     justify-content: center;
-    padding-top: 140px;
+    align-items: flex-start;
+
+    height: 100vh;
     text-align: center;
 }
 
+/* gesamter Block */
 .container {
+    margin-top: 18vh; /* GOLDENER SCHNITT LOOK */
     max-width: 900px;
-    padding: 20px;
 }
 
-/* TOP LINE */
-.intro {
+/* oberer Satz */
+.tagline {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-size: 18px;
-    color: #777;
-    margin-bottom: 70px;
+    color: #7a7a7a;
+    margin-bottom: 60px;
 }
 
-/* TITLE */
+/* Haupttitel */
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 80px;
+    font-size: 64px;
+    font-weight: 600;
     letter-spacing: 2px;
-    margin: 0 0 30px 0;
+    margin: 0 0 25px 0;
 }
 
-/* SUBTITLE */
+/* Untertitel */
 .subtitle {
-    font-size: 17px;
-    color: #999;
-    letter-spacing: 1.2px;
-    margin-bottom: 90px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #8a8a8a;
+    margin-bottom: 80px;
 }
 
-/* LOCATIONS */
+/* Locations */
 .locations {
     display: flex;
     justify-content: center;
-    gap: 160px;
-    margin-bottom: 90px;
+    gap: 120px;
+    margin-bottom: 80px;
 }
 
 .city {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    margin-bottom: 12px;
+    font-size: 22px;
+    margin-bottom: 8px;
 }
 
 .place {
-    font-size: 16px;
-    color: #555;
+    font-size: 14px;
+    color: #666;
 }
 
-/* CONTACT */
-.contact {
-    font-size: 15px;
-    color: #777;
+/* Footer */
+.footer {
+    font-size: 13px;
+    color: #999;
     line-height: 1.6;
 }
-
 </style>
 </head>
 
@@ -84,7 +86,7 @@ h1 {
 
 <div class="container">
 
-<div class="intro">
+<div class="tagline">
 When words are not enough, neurofeedback can help regulate the nervous system.
 </div>
 
@@ -108,7 +110,7 @@ Neurofeedback & Psychotherapy
 
 </div>
 
-<div class="contact">
+<div class="footer">
 You are welcome to join our waiting list.<br>
 info@neurocentre.ie
 </div>
