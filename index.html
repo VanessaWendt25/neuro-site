@@ -39,16 +39,16 @@
       align-items: start;
     }
 
-    /* MAIN TITLE – soft slow reveal */
+    /* MAIN TITLE – balanced fade */
     .left-block {
-      opacity: 0.05;
-      animation: luxuryFade 5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+      opacity: 0.08;
+      animation: luxuryFade 3.6s cubic-bezier(0.33, 1, 0.68, 1) forwards;
     }
 
     .right-block {
       opacity: 0;
-      animation: softFade 2.2s ease forwards;
-      animation-delay: 1.8s;
+      animation: softFade 2s ease forwards;
+      animation-delay: 1.2s;
     }
 
     .locations {
@@ -59,8 +59,8 @@
       padding-top: 2rem;
       border-top: 1px solid var(--line);
       opacity: 0;
-      animation: softFade 2.2s ease forwards;
-      animation-delay: 2.8s;
+      animation: softFade 2s ease forwards;
+      animation-delay: 2s;
     }
 
     .title {
@@ -126,9 +126,9 @@
     }
 
     @keyframes luxuryFade {
-      0%   { opacity: 0.05; }
-      40%  { opacity: 0.08; }
-      70%  { opacity: 0.4; }
+      0%   { opacity: 0.08; }
+      35%  { opacity: 0.2; }
+      70%  { opacity: 0.6; }
       100% { opacity: 1; }
     }
 
