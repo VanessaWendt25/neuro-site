@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Neuro Centre</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -13,7 +13,7 @@
       --text: #141414;
       --muted: #7a736a;
       --line: #ddd5ca;
-      --accent: #b89a5c;
+      --accent: #c9a24a;
     }
 
     * {
@@ -46,7 +46,6 @@
       font-weight: 600;
       font-size: clamp(100px, 12vw, 200px);
       line-height: 0.85;
-      letter-spacing: 0.01em;
       margin: 0 0 2rem 0;
     }
 
@@ -71,6 +70,10 @@
 
     .city-highlight {
       color: var(--accent);
+    }
+
+    .nowrap {
+      white-space: nowrap;
     }
 
     .waiting {
@@ -101,13 +104,14 @@
 
     .city {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 2vw, 38px);
+      font-weight: 500;
+      font-size: clamp(24px, 1.8vw, 34px);
       color: var(--accent);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .place {
-      font-size: 15px;
+      font-size: 14px;
       color: var(--muted);
     }
 
@@ -159,7 +163,8 @@
     <div class="side">
 
       <div class="launch">
-        Coming to <span class="city-highlight">Birr</span> and <span class="city-highlight">Athlone</span> this summer
+        Coming to <span class="city-highlight">Birr</span> and <span class="city-highlight">Athlone</span><br>
+        <span class="nowrap">this summer</span>
       </div>
 
       <div class="waiting">
