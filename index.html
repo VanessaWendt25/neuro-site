@@ -39,17 +39,16 @@
       align-items: start;
     }
 
-    /* MAIN TITLE – soft fog fade */
+    /* MAIN TITLE – soft slow reveal */
     .left-block {
-      opacity: 0;
-      filter: blur(6px);
-      animation: fogFade 4.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      opacity: 0.05;
+      animation: luxuryFade 5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
     }
 
     .right-block {
       opacity: 0;
       animation: softFade 2.2s ease forwards;
-      animation-delay: 1.4s;
+      animation-delay: 1.8s;
     }
 
     .locations {
@@ -61,7 +60,7 @@
       border-top: 1px solid var(--line);
       opacity: 0;
       animation: softFade 2.2s ease forwards;
-      animation-delay: 2.4s;
+      animation-delay: 2.8s;
     }
 
     .title {
@@ -126,19 +125,11 @@
       color: var(--accent);
     }
 
-    @keyframes fogFade {
-      0% {
-        opacity: 0;
-        filter: blur(8px);
-      }
-      40% {
-        opacity: 0.3;
-        filter: blur(4px);
-      }
-      100% {
-        opacity: 1;
-        filter: blur(0);
-      }
+    @keyframes luxuryFade {
+      0%   { opacity: 0.05; }
+      40%  { opacity: 0.08; }
+      70%  { opacity: 0.4; }
+      100% { opacity: 1; }
     }
 
     @keyframes softFade {
@@ -152,7 +143,6 @@
       .locations {
         animation: none;
         opacity: 1;
-        filter: none;
       }
     }
 
