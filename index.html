@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>The Neuro Centre</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -14,89 +15,100 @@ body {
   color: #1a1a1a;
   font-family: 'Inter', sans-serif;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   text-align: center;
 }
 
 .container {
-  max-width: 760px;
-  padding: 40px 30px;
+  max-width: 700px;
+  padding: 40px 20px;
 }
 
+/* TOP INTRO */
+.intro {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 70px;
+}
+
+/* MAIN TITLE */
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 64px;
+  font-size: 72px;
   letter-spacing: 1px;
-  margin-bottom: 18px;
+  margin: 0 0 12px 0;
 }
 
+/* SUBTITLE */
 .subtitle {
-  font-size: 24px;
+  font-size: 20px;
   color: #555;
-  margin-bottom: 34px;
-}
-.coming {
-  font-size: 15px;
-  color: #555;
-  margin: 20px 0;
-  line-height: 1.6;
-  letter-spacing: 0.5px;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 60px;
 }
 
-.contact {
-  font-size: 14px;
-  color: #444;
-}
+/* LOCATIONS */
 .locations {
   display: flex;
   justify-content: center;
-  gap: 60px;
-  margin: 30px 0;
+  gap: 120px;
+  margin-bottom: 70px;
 }
 
 .city {
-  font-weight: 500;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
   margin-bottom: 6px;
 }
-</style>
 
+.place {
+  font-size: 16px;
+  color: #444;
+}
+
+/* CONTACT */
+.contact {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
+
+  <div class="intro">
+    When words are not enough, neurofeedback can help regulate the nervous system.
+  </div>
+
   <h1>THE NEURO CENTRE</h1>
 
-<div class="subtitle">Neurofeedback and Psychotherapy</div>
-
-<div class="coming">
-When words are not enough, neurofeedback can help regulate the nervous system and support lasting change.
-</div>
-
-<div class="coming">
-Coming to Birr and Athlone this summer
-</div>
-
-<div class="locations">
-  <div>
-    <div class="city">Birr</div>
-    <div>@ The Space Above</div>
+  <div class="subtitle">
+    Neurofeedback & Psychotherapy
   </div>
 
-  <div>
-    <div class="city">Athlone</div>
-    <div>@ The Athlone Care Clinic</div>
-  </div>
-</div>
+  <div class="locations">
+    <div>
+      <div class="city">Birr</div>
+      <div class="place">@ The Space Above</div>
+    </div>
 
-<div class="contact">
-You are welcome to join our waiting list.<br>
-info@neurocentre.ie
+    <div>
+      <div class="city">Athlone</div>
+      <div class="place">@ The Athlone Care Clinic</div>
+    </div>
+  </div>
+
+  <div class="contact">
+    You are welcome to join our waiting list.<br>
+    info@neurocentre.ie
+  </div>
+
 </div>
 
 </body>
