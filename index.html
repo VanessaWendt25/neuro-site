@@ -39,20 +39,19 @@
       align-items: start;
     }
 
-    /* MAIN TITLE – slow cinematic fade */
+    /* MAIN TITLE – soft fog fade */
     .left-block {
       opacity: 0;
-      animation: ultraFade 4s ease forwards;
+      filter: blur(6px);
+      animation: fogFade 4.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
-    /* RIGHT – delayed */
     .right-block {
       opacity: 0;
-      animation: ultraFade 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      animation-delay: 1.2s;
+      animation: softFade 2.2s ease forwards;
+      animation-delay: 1.4s;
     }
 
-    /* BOTTOM – later */
     .locations {
       margin-top: 14vh;
       display: grid;
@@ -61,8 +60,8 @@
       padding-top: 2rem;
       border-top: 1px solid var(--line);
       opacity: 0;
-      animation: ultraFade 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      animation-delay: 2.2s;
+      animation: softFade 2.2s ease forwards;
+      animation-delay: 2.4s;
     }
 
     .title {
@@ -127,7 +126,22 @@
       color: var(--accent);
     }
 
-    @keyframes ultraFade {
+    @keyframes fogFade {
+      0% {
+        opacity: 0;
+        filter: blur(8px);
+      }
+      40% {
+        opacity: 0.3;
+        filter: blur(4px);
+      }
+      100% {
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+
+    @keyframes softFade {
       from { opacity: 0; }
       to { opacity: 1; }
     }
@@ -138,6 +152,7 @@
       .locations {
         animation: none;
         opacity: 1;
+        filter: none;
       }
     }
 
@@ -163,6 +178,7 @@
         margin-top: 10vh;
       }
     }
+
   </style>
 </head>
 
