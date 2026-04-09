@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>The Neuro Centre</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -28,24 +27,25 @@ body {
 
 /* PAGE */
 .page {
-  padding: 8vh 6vw;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 10vh 6vw 6vh 6vw;
 }
 
-/* TOP */
+/* TOP NOTE */
 .topnote {
   font-size: 12px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 12vh;
+  margin-bottom: 8vh;
 }
 
 /* HERO */
 .hero {
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4vw;
   align-items: start;
 }
 
@@ -53,52 +53,59 @@ body {
 h1 {
   margin: 0;
   font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  font-size: clamp(80px, 10vw, 160px);
-  line-height: 0.88;
-  letter-spacing: 0.01em;
+  font-size: clamp(60px, 7vw, 110px);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
 }
 
 /* RIGHT SIDE */
 .side {
-  margin-top: 2vh;
-  padding-left: 2vw;
+  padding-top: 1vh;
 }
 
-/* BIG STATEMENT */
+/* LAUNCH TEXT */
 .launch {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 2.6vw, 44px);
-  line-height: 1.1;
-  margin-bottom: 2.5rem;
+  font-size: clamp(22px, 2vw, 34px);
+  line-height: 1.2;
+  margin-bottom: 2rem;
 }
 
-/* SMALL TEXT */
+/* WAITING LIST */
 .waiting {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--muted);
+  line-height: 1.7;
+}
+
+/* LINKS */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.6;
 }
 
 /* LOCATIONS */
 .locations {
-  margin-top: 18vh;
+  margin-top: 12vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 4vw;
 }
 
-/* INTENTIONALLY UNBALANCED */
-.location-left {
-  transform: translateY(40px);
-}
-
-.location-right {
-  text-align: right;
+.location {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .city {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 3vw, 60px);
-  margin-bottom: 6px;
+  font-size: 28px;
 }
 
 .place {
@@ -108,33 +115,8 @@ h1 {
 
 /* FOOTER */
 .footer {
-  margin-top: 18vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.footer-note {
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.email {
-  font-size: clamp(16px, 1.2vw, 22px);
-}
-
-/* LINKS */
-a {
-  color: inherit;
-  text-decoration: none;
-  opacity: 1;
-  transition: opacity 0.2s ease;
-}
-
-a:hover {
-  opacity: 0.6;
+  margin-top: 12vh;
+  font-size: 16px;
 }
 
 /* MOBILE */
@@ -142,35 +124,18 @@ a:hover {
 
   .hero {
     grid-template-columns: 1fr;
-  }
-
-  .side {
-    margin-top: 3rem;
-    padding-left: 0;
-  }
-
-  h1 {
-    font-size: clamp(56px, 14vw, 90px);
+    gap: 2.5rem;
   }
 
   .locations {
     grid-template-columns: 1fr;
-    gap: 3rem;
-    margin-top: 12vh;
+    gap: 2rem;
   }
 
-  .location-left,
-  .location-right {
-    transform: none;
-    text-align: left;
+  h1 {
+    font-size: clamp(48px, 12vw, 72px);
   }
 
-  .footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-top: 12vh;
-  }
 }
 </style>
 </head>
@@ -188,37 +153,33 @@ a:hover {
     </div>
 
     <div class="side">
+
       <div class="launch">
         Coming to Birr and Athlone this summer
       </div>
 
       <div class="waiting">
-        You are welcome to join our waiting list.
+        Join the waiting list — 
+        <a href="mailto:info@neurocentre.ie">info@neurocentre.ie</a>
       </div>
+
     </div>
 
   </section>
 
   <section class="locations">
 
-    <div class="location-left">
+    <div class="location">
       <div class="city">Birr</div>
       <div class="place">@ The Space Above</div>
     </div>
 
-    <div class="location-right">
+    <div class="location">
       <div class="city">Athlone</div>
       <div class="place">@ The Athlone Care Clinic</div>
     </div>
 
   </section>
-
-  <footer class="footer">
-    <div class="footer-note">Enquiries</div>
-    <div class="email">
-      <a href="mailto:info@neurocentre.ie">info@neurocentre.ie</a>
-    </div>
-  </footer>
 
 </div>
 
