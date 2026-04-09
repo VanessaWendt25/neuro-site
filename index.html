@@ -13,6 +13,7 @@
       --muted: #7d766e;
       --soft: #a0988e;
       --line: #ddd5ca;
+      --accent: #8b7650;
     }
 
     * {
@@ -62,12 +63,20 @@
       font-size: clamp(92px, 11vw, 190px);
       line-height: 0.88;
       letter-spacing: 0.01em;
-      margin: 0;
+      margin: 0 0 2.2rem 0;
+    }
+
+    .subtitle {
+      font-size: 21px;
+      line-height: 1.4;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
     }
 
     .side {
       padding-top: 1.5vh;
-      max-width: 360px;
+      max-width: 400px;
     }
 
     .launch {
@@ -78,6 +87,10 @@
       margin: 0 0 2rem 0;
     }
 
+    .city-highlight {
+      color: var(--accent);
+    }
+
     .waiting {
       font-size: 15px;
       line-height: 1.7;
@@ -85,7 +98,8 @@
     }
 
     .waiting a,
-    .email a {
+    .email a,
+    .place a {
       color: inherit;
       text-decoration: none;
       border-bottom: 1px solid transparent;
@@ -93,8 +107,9 @@
     }
 
     .waiting a:hover,
-    .email a:hover {
-      opacity: 0.7;
+    .email a:hover,
+    .place a:hover {
+      opacity: 0.72;
       border-color: currentColor;
     }
 
@@ -117,6 +132,7 @@
       font-size: clamp(28px, 2.2vw, 42px);
       line-height: 1;
       margin-bottom: 10px;
+      color: var(--accent);
     }
 
     .place {
@@ -170,6 +186,10 @@
         font-size: clamp(64px, 16vw, 120px);
       }
 
+      .subtitle {
+        font-size: 17px;
+      }
+
       .launch {
         font-size: clamp(30px, 8vw, 46px);
         max-width: 10ch;
@@ -205,11 +225,15 @@
           NEURO<br>
           CENTRE
         </h1>
+
+        <div class="subtitle">
+          Neurofeedback & Psychotherapy
+        </div>
       </div>
 
       <div class="side">
         <div class="launch">
-          Coming to Birr and Athlone this summer
+          Coming to <span class="city-highlight">Birr</span> and <span class="city-highlight">Athlone</span> this summer
         </div>
 
         <div class="waiting">
