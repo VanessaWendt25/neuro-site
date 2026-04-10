@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Neuro Centre</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Libre+Franklin:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Libre+Franklin:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -13,14 +13,13 @@
       --text: #141414;
       --muted: #7a736a;
       --line: #ddd5ca;
-      --accent: #FF5A1F;
+      --accent: #ff4d1f;
     }
 
     * { box-sizing: border-box; }
 
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
       background: var(--bg);
       color: var(--text);
       font-family: 'Libre Franklin', sans-serif;
@@ -29,22 +28,17 @@
     .page {
       max-width: 1500px;
       margin: 0 auto;
-      padding: 9vh 7vw 7vh 7vw;
+      padding: 9vh 7vw;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 7vw;
+      grid-template-columns: 1.2fr 0.8fr;
       align-items: stretch;
+      gap: 6vw;
     }
 
-    .left-block {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
+    /* LEFT */
     .title {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
@@ -60,52 +54,41 @@
       color: var(--accent);
     }
 
-    /* SPLIT FLÄCHE – KEIN KASTEN */
+    /* RIGHT – FULL ORANGE BLOCK */
     .right-block {
       background: var(--accent);
+      padding: 4rem 3rem;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 3vw;
-    }
-
-    .inner {
-      max-width: 420px;
+      align-items: flex-start;
     }
 
     .launch {
       font-family: 'Playfair Display', serif;
       font-size: clamp(36px, 3vw, 54px);
       line-height: 1.05;
-      margin-bottom: 2rem;
-      color: var(--text);
+      color: #141414;
     }
 
-    .city-highlight {
-      font-family: 'Libre Franklin', sans-serif;
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    .nowrap {
-      white-space: nowrap;
+    /* CUT-OUT EFFECT */
+    .cutout {
+      color: var(--bg);
     }
 
     .waiting {
+      margin-top: 2rem;
       font-size: 14px;
-      color: rgba(0,0,0,0.7);
-      line-height: 1.7;
+      color: #141414;
     }
 
     .waiting a {
-      color: var(--text);
+      color: #141414;
       text-decoration: none;
-      border-bottom: 1px solid var(--text);
-      padding-bottom: 2px;
+      border-bottom: 1px solid #141414;
     }
 
+    /* LOCATIONS */
     .locations {
-      margin-top: 14vh;
+      margin-top: 12vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 6vw;
@@ -115,8 +98,7 @@
 
     .city {
       font-family: 'Playfair Display', serif;
-      font-weight: 500;
-      font-size: clamp(24px, 1.8vw, 34px);
+      font-size: 28px;
       margin-bottom: 6px;
     }
 
@@ -125,30 +107,14 @@
       color: var(--accent);
     }
 
+    /* MOBILE */
     @media (max-width: 980px) {
-      .page { padding: 7vh 6vw; }
-
       .hero {
         grid-template-columns: 1fr;
-        gap: 3rem;
       }
 
       .right-block {
-        padding: 2rem;
-      }
-
-      .title {
-        font-size: clamp(70px, 18vw, 130px);
-      }
-
-      .launch {
-        font-size: clamp(32px, 8vw, 48px);
-      }
-
-      .locations {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        margin-top: 10vh;
+        margin-top: 2rem;
       }
     }
 
@@ -161,7 +127,8 @@
 
   <section class="hero">
 
-    <div class="left-block">
+    <!-- LEFT -->
+    <div>
       <h1 class="title">
         THE<br>
         NEURO<br>
@@ -173,17 +140,20 @@
       </div>
     </div>
 
+    <!-- RIGHT -->
     <div class="right-block">
-      <div class="inner">
+      <div>
+
         <div class="launch">
-          Coming to <span class="city-highlight">Birr</span> and <span class="city-highlight">Athlone</span><br>
-          <span class="nowrap">this summer</span>
+          Coming to <span class="cutout">Birr</span> and <span class="cutout">Athlone</span><br>
+          this summer
         </div>
 
         <div class="waiting">
           Join the waiting list —
           <a href="mailto:info@neurocentre.ie">info@neurocentre.ie</a>
         </div>
+
       </div>
     </div>
 
