@@ -59,7 +59,6 @@
       justify-self: end;
     }
 
-    /* STRONGER ANIMATION */
     .fade-in {
       opacity: 0;
       transform: translateY(40px);
@@ -78,6 +77,7 @@
       position: relative;
       top: 16px;
       left: 16px;
+      margin: 0;
     }
 
     .city-highlight {
@@ -136,11 +136,82 @@
     .location-title {
       font-family: 'Playfair Display', serif;
       font-size: 28px;
+      margin: 0 0 2px 0;
     }
 
     .place {
       font-size: 14px;
       color: var(--accent);
+      margin: 0;
+    }
+
+    @media (max-width: 1100px) {
+      .hero {
+        grid-template-columns: 1fr 360px;
+      }
+
+      .side {
+        width: 360px;
+      }
+
+      .title {
+        font-size: clamp(90px, 10.5vw, 180px);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        padding: 6vh 6vw 4vh 6vw;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+      }
+
+      .side {
+        width: 100%;
+        max-width: 420px;
+        justify-self: start;
+      }
+
+      .title {
+        font-size: clamp(70px, 18vw, 130px);
+      }
+
+      .launch {
+        font-size: clamp(32px, 8vw, 48px);
+        top: 0;
+        left: 0;
+      }
+
+      .waiting {
+        top: 0;
+        left: 0;
+        margin-top: 12px;
+      }
+
+      .lower-block {
+        margin-top: 56px;
+      }
+
+      .band {
+        padding: 0.75rem 0;
+      }
+
+      .band-text {
+        font-size: clamp(26px, 7vw, 40px);
+      }
+
+      .locations {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .fade-in {
+        transform: translateY(20px);
+        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      }
     }
   </style>
 </head>
@@ -215,7 +286,6 @@
       document.documentElement.style.setProperty('--band-text', '#000000');
     }
 
-    // STAGGERED ANIMATION
     setTimeout(() => {
       document.getElementById("comingBlock").classList.add("visible");
     }, 900);
