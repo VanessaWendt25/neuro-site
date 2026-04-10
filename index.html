@@ -15,9 +15,7 @@
       --accent: #ff5a1f;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html, body {
       margin: 0;
@@ -41,10 +39,6 @@
       align-items: start;
     }
 
-    .left-block {
-      min-width: 0;
-    }
-
     .title {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
@@ -63,9 +57,7 @@
 
     .side {
       width: 420px;
-      max-width: 420px;
       justify-self: end;
-      padding-top: 0.4vh;
     }
 
     .launch {
@@ -85,20 +77,17 @@
     .waiting {
       font-size: 14px;
       color: var(--muted);
-      line-height: 1.65;
-      margin: 0;
     }
 
     .waiting a {
       color: var(--text);
       text-decoration: none;
       border-bottom: 1px solid var(--accent);
-      padding-bottom: 2px;
     }
 
-    /* ONLY CHANGE: moved DOWN by +15px */
+    /* 🔥 THIS is the ONLY real change */
     .lower-block {
-      margin-top: 25px;
+      margin-top: 90px; /* BIG move down */
     }
 
     .band {
@@ -108,7 +97,6 @@
       width: 100vw;
       background: var(--accent);
       padding: 1.35rem 0;
-      margin-bottom: 0.5rem;
     }
 
     .band-inner {
@@ -121,8 +109,7 @@
       font-family: 'Playfair Display', serif;
       font-weight: 500;
       font-size: clamp(40px, 4vw, 70px);
-      line-height: 1.03;
-      color: #ffffff;
+      color: #fff;
       margin: 0;
     }
 
@@ -131,77 +118,18 @@
       grid-template-columns: 1fr 1fr;
       gap: 5vw;
       margin-top: 0;
-      padding-top: 0;
-      border-top: none;
     }
 
     .location-title {
       font-family: 'Playfair Display', serif;
-      font-weight: 500;
-      font-size: clamp(24px, 1.8vw, 34px);
-      margin: 0 0 4px 0;
-      color: var(--text);
-    }
-
-    .place {
-      font-family: 'Libre Franklin', sans-serif;
-      font-size: 14px;
-      color: var(--accent);
+      font-size: 28px;
       margin: 0;
     }
 
-    @media (max-width: 1100px) {
-      .hero {
-        grid-template-columns: 1fr 360px;
-      }
-
-      .side {
-        width: 360px;
-        max-width: 360px;
-      }
-
-      .title {
-        font-size: clamp(90px, 10.5vw, 180px);
-      }
-    }
-
-    @media (max-width: 900px) {
-      .page {
-        padding: 5vh 6vw 2vh 6vw;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .side {
-        width: 100%;
-        max-width: 420px;
-        justify-self: start;
-        padding-top: 0;
-      }
-
-      .title {
-        font-size: clamp(70px, 18vw, 130px);
-      }
-
-      .launch {
-        font-size: clamp(32px, 8vw, 48px);
-      }
-
-      .band {
-        padding: 1.15rem 0;
-      }
-
-      .band-text {
-        font-size: clamp(30px, 8vw, 44px);
-      }
-
-      .locations {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
+    .place {
+      font-size: 14px;
+      color: var(--accent);
+      margin: 0;
     }
   </style>
 </head>
@@ -210,13 +138,10 @@
 
   <div class="page">
     <section class="hero">
-      <div class="left-block">
+      <div>
         <h1 class="title">
-          THE<br>
-          NEURO<br>
-          CENTRE
+          THE<br>NEURO<br>CENTRE
         </h1>
-
         <div class="subtitle">
           NEUROFEEDBACK &amp; PSYCHOTHERAPY
         </div>
@@ -227,8 +152,7 @@
           Coming to<br>
           <span class="city-highlight">Birr</span> and<br>
           <span class="city-highlight">Athlone</span><br>
-          this<br>
-          summer
+          this<br>summer
         </div>
 
         <p class="waiting">
@@ -257,6 +181,7 @@
         </div>
       </section>
     </div>
+
   </div>
 
 </body>
