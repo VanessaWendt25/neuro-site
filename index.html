@@ -13,10 +13,13 @@
       --text: #141414;
       --muted: #7a736a;
       --line: #ddd5ca;
-      --accent: #F05A28;
+      --accent: #f05a28;
+      --white: #ffffff;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     html, body {
       margin: 0;
@@ -44,17 +47,13 @@
     }
 
     .right-block {
-      opacity: 1;
-    }
-
-    .locations {
-      margin-top: 14vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6vw;
-      padding-top: 2rem;
-      border-top: 1px solid var(--line);
-      opacity: 1;
+      background: var(--accent);
+      color: var(--white);
+      padding: 3.5rem 3rem;
+      min-height: 28rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .title {
@@ -72,22 +71,18 @@
       color: var(--accent);
     }
 
-    .side {
-      padding-top: 2vh;
-      max-width: 380px;
-    }
-
     .launch {
       font-family: 'Playfair Display', serif;
       font-size: clamp(36px, 3vw, 54px);
       line-height: 1.05;
       margin-bottom: 2rem;
+      color: var(--white);
     }
 
     .city-highlight {
       font-family: 'Libre Franklin', sans-serif;
       font-weight: 300;
-      color: var(--accent);
+      color: var(--white);
     }
 
     .nowrap {
@@ -96,15 +91,24 @@
 
     .waiting {
       font-size: 14px;
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.9);
       line-height: 1.7;
     }
 
     .waiting a {
-      color: var(--text);
+      color: var(--white);
       text-decoration: none;
-      border-bottom: 1px solid var(--accent);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.8);
       padding-bottom: 2px;
+    }
+
+    .locations {
+      margin-top: 14vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6vw;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
     }
 
     .city {
@@ -112,15 +116,18 @@
       font-weight: 500;
       font-size: clamp(24px, 1.8vw, 34px);
       margin-bottom: 6px;
+      color: var(--text);
     }
 
     .place {
       font-size: 14px;
-      color: var(--accent);
+      color: var(--muted);
     }
 
     @media (max-width: 980px) {
-      .page { padding: 7vh 6vw; }
+      .page {
+        padding: 7vh 6vw;
+      }
 
       .hero {
         grid-template-columns: 1fr;
@@ -135,13 +142,17 @@
         font-size: clamp(32px, 8vw, 48px);
       }
 
+      .right-block {
+        min-height: auto;
+        padding: 2.5rem 2rem;
+      }
+
       .locations {
         grid-template-columns: 1fr;
         gap: 2.5rem;
         margin-top: 10vh;
       }
     }
-
   </style>
 </head>
 
@@ -163,8 +174,7 @@
       </div>
     </div>
 
-    <div class="right-block side">
-
+    <div class="right-block">
       <div class="launch">
         Coming to <span class="city-highlight">Birr</span> and <span class="city-highlight">Athlone</span><br>
         <span class="nowrap">this summer</span>
@@ -174,7 +184,6 @@
         Join the waiting list —
         <a href="mailto:info@neurocentre.ie">info@neurocentre.ie</a>
       </div>
-
     </div>
 
   </section>
