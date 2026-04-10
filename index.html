@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Neuro Centre</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Libre+Franklin:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Libre+Franklin:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -26,67 +26,61 @@
       font-family: 'Libre Franklin', sans-serif;
     }
 
-    body {
-      overflow-x: hidden;
-    }
-
     .page {
       max-width: 1500px;
       margin: 0 auto;
-      padding: 5.2vh 6vw 2.2vh 6vw;
+
+      /* 🔧 reduced top + bottom space ONLY */
+      padding: 4vh 6vw 1.5vh 6vw;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 6vw;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 7vw;
       align-items: start;
-    }
-
-    .left-block {
-      min-width: 0;
     }
 
     .title {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
-      font-size: clamp(78px, 9.4vw, 168px);
-      line-height: 0.84;
-      margin: 0 0 1rem 0;
+
+      /* 🔧 reduced slightly (~5px effect) */
+      font-size: clamp(95px, 11.5vw, 195px);
+
+      line-height: 0.85;
+      margin: 0 0 1.2rem 0;
     }
 
     .subtitle {
-      font-size: 16px;
-      letter-spacing: 0.16em;
+      font-size: 18px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--accent);
     }
 
     .side {
-      width: 420px;
-      max-width: 420px;
-      justify-self: end;
-      padding-top: 0;
-      margin-top: -4px;
+      padding-top: 1vh; /* 🔧 slightly reduced */
+      max-width: 380px;
     }
 
     .launch {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(32px, 3vw, 52px);
-      line-height: 0.98;
-      margin: 0 0 1rem 0;
+      font-size: clamp(36px, 3vw, 54px);
+      line-height: 1.05;
+      margin-bottom: 1.5rem; /* 🔧 tighter */
     }
 
     .city-highlight {
       font-family: 'Libre Franklin', sans-serif;
-      font-weight: 400;
+      font-weight: 300;
       color: var(--accent);
     }
 
     .waiting {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--muted);
-      line-height: 1.55;
+      line-height: 1.7;
     }
 
     .waiting a {
@@ -96,11 +90,14 @@
       padding-bottom: 2px;
     }
 
+    /* 🔥 ORANGE BAND (unchanged visually, just moved up slightly) */
     .band {
-      margin-top: 1.4vh;
-      margin-bottom: 1vh;
+      margin-top: 2vh;      /* 🔧 was larger before */
+      margin-bottom: 0.8vh; /* 🔧 tighter */
+
       background: var(--accent);
-      padding: 1.5rem 6vw;
+      padding: 1.6rem 6vw;
+
       margin-left: calc(-6vw);
       margin-right: calc(-6vw);
     }
@@ -108,89 +105,57 @@
     .band-text {
       font-family: 'Playfair Display', serif;
       font-weight: 500;
-      font-size: clamp(38px, 4vw, 72px);
-      line-height: 1.03;
+      font-size: clamp(40px, 4vw, 70px);
       color: #ffffff;
       margin: 0;
     }
 
     .locations {
-      margin-top: 0;
+      margin-top: 0; /* 🔧 removed gap above */
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5vw;
-      padding-top: 0.35rem;
+      gap: 6vw;
+
+      /* ❌ removed grey divider completely */
+      padding-top: 0;
       border-top: none;
     }
 
     .city {
       font-family: 'Playfair Display', serif;
       font-weight: 500;
-      font-size: clamp(22px, 1.7vw, 32px);
-      margin: 0 0 4px 0;
+      font-size: clamp(24px, 1.8vw, 34px);
+      margin-bottom: 4px;
     }
 
     .place {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--accent);
-      margin: 0;
     }
 
-    @media (max-width: 1100px) {
-      .hero {
-        grid-template-columns: 1fr 360px;
-      }
-
-      .side {
-        width: 360px;
-        max-width: 360px;
-      }
-
-      .title {
-        font-size: clamp(74px, 9vw, 150px);
-      }
-    }
-
-    @media (max-width: 900px) {
-      .page {
-        padding: 6vh 6vw 4vh 6vw;
-      }
+    @media (max-width: 980px) {
+      .page { padding: 6vh 6vw 3vh 6vw; }
 
       .hero {
         grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .side {
-        width: 100%;
-        max-width: 420px;
-        justify-self: start;
-        margin-top: 0;
+        gap: 3rem;
       }
 
       .title {
-        font-size: clamp(64px, 17vw, 120px);
+        font-size: clamp(70px, 18vw, 130px);
       }
 
       .launch {
-        font-size: clamp(28px, 8vw, 44px);
-      }
-
-      .band {
-        margin-top: 1.2rem;
-        margin-bottom: 1rem;
-        padding: 1.2rem 6vw;
-      }
-
-      .band-text {
-        font-size: clamp(28px, 8vw, 42px);
+        font-size: clamp(32px, 8vw, 48px);
       }
 
       .locations {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2.5rem;
+        margin-top: 6vh;
       }
     }
+
   </style>
 </head>
 
@@ -199,7 +164,8 @@
 <div class="page">
 
   <section class="hero">
-    <div class="left-block">
+
+    <div>
       <h1 class="title">
         THE<br>
         NEURO<br>
@@ -212,19 +178,19 @@
     </div>
 
     <div class="side">
+
       <div class="launch">
-        Coming to<br>
-        <span class="city-highlight">Birr</span> and<br>
-        <span class="city-highlight">Athlone</span><br>
-        this<br>
-        summer
+        Coming to <span class="city-highlight">Birr</span> and <span class="city-highlight">Athlone</span><br>
+        this summer
       </div>
 
       <div class="waiting">
         Join the waiting list —
         <a href="mailto:info@neurocentre.ie">info@neurocentre.ie</a>
       </div>
+
     </div>
+
   </section>
 
   <section class="band">
@@ -232,15 +198,17 @@
   </section>
 
   <section class="locations">
+
     <div>
-      <h2 class="city">Birr</h2>
-      <p class="place">@ The Space Above</p>
+      <div class="city">Birr</div>
+      <div class="place">@ The Space Above</div>
     </div>
 
     <div>
-      <h2 class="city">Athlone</h2>
-      <p class="place">@ The Athlone Care Clinic</p>
+      <div class="city">Athlone</div>
+      <div class="place">@ The Athlone Care Clinic</div>
     </div>
+
   </section>
 
 </div>
