@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Neuro Centre</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Libre+Franklin:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Libre+Franklin:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -13,13 +13,10 @@
       --text: #141414;
       --muted: #7a736a;
       --line: #ddd5ca;
-      --accent: #f05a28;
-      --white: #ffffff;
+      --accent: #FF5A1F;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html, body {
       margin: 0;
@@ -39,18 +36,10 @@
       display: grid;
       grid-template-columns: 1.25fr 0.75fr;
       gap: 7vw;
-      align-items: start;
+      align-items: stretch;
     }
 
     .left-block {
-      color: var(--text);
-    }
-
-    .right-block {
-      background: var(--accent);
-      color: var(--white);
-      padding: 3.5rem 3rem;
-      min-height: 28rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -71,18 +60,31 @@
       color: var(--accent);
     }
 
+    /* SPLIT FLÄCHE – KEIN KASTEN */
+    .right-block {
+      background: var(--accent);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 3vw;
+    }
+
+    .inner {
+      max-width: 420px;
+    }
+
     .launch {
       font-family: 'Playfair Display', serif;
       font-size: clamp(36px, 3vw, 54px);
       line-height: 1.05;
       margin-bottom: 2rem;
-      color: var(--white);
+      color: var(--text);
     }
 
     .city-highlight {
       font-family: 'Libre Franklin', sans-serif;
-      font-weight: 300;
-      color: var(--white);
+      font-weight: 500;
+      color: var(--text);
     }
 
     .nowrap {
@@ -91,14 +93,14 @@
 
     .waiting {
       font-size: 14px;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(0,0,0,0.7);
       line-height: 1.7;
     }
 
     .waiting a {
-      color: var(--white);
+      color: var(--text);
       text-decoration: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid var(--text);
       padding-bottom: 2px;
     }
 
@@ -116,22 +118,23 @@
       font-weight: 500;
       font-size: clamp(24px, 1.8vw, 34px);
       margin-bottom: 6px;
-      color: var(--text);
     }
 
     .place {
       font-size: 14px;
-      color: var(--muted);
+      color: var(--accent);
     }
 
     @media (max-width: 980px) {
-      .page {
-        padding: 7vh 6vw;
-      }
+      .page { padding: 7vh 6vw; }
 
       .hero {
         grid-template-columns: 1fr;
         gap: 3rem;
+      }
+
+      .right-block {
+        padding: 2rem;
       }
 
       .title {
@@ -142,17 +145,13 @@
         font-size: clamp(32px, 8vw, 48px);
       }
 
-      .right-block {
-        min-height: auto;
-        padding: 2.5rem 2rem;
-      }
-
       .locations {
         grid-template-columns: 1fr;
         gap: 2.5rem;
         margin-top: 10vh;
       }
     }
+
   </style>
 </head>
 
@@ -175,14 +174,16 @@
     </div>
 
     <div class="right-block">
-      <div class="launch">
-        Coming to <span class="city-highlight">Birr</span> and <span class="city-highlight">Athlone</span><br>
-        <span class="nowrap">this summer</span>
-      </div>
+      <div class="inner">
+        <div class="launch">
+          Coming to <span class="city-highlight">Birr</span> and <span class="city-highlight">Athlone</span><br>
+          <span class="nowrap">this summer</span>
+        </div>
 
-      <div class="waiting">
-        Join the waiting list —
-        <a href="mailto:info@neurocentre.ie">info@neurocentre.ie</a>
+        <div class="waiting">
+          Join the waiting list —
+          <a href="mailto:info@neurocentre.ie">info@neurocentre.ie</a>
+        </div>
       </div>
     </div>
 
