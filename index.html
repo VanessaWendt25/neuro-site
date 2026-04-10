@@ -13,11 +13,10 @@
       --text: #141414;
       --muted: #7a736a;
       --accent: #ff5a1f;
+      --band-text: #ffffff;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html, body {
       margin: 0;
@@ -54,7 +53,6 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--accent);
-      margin: 0;
     }
 
     .side {
@@ -64,10 +62,8 @@
 
     .launch {
       font-family: 'Playfair Display', serif;
-      font-weight: 500;
       font-size: clamp(36px, 3vw, 54px);
       line-height: 1.02;
-      margin: 0 0 1.4rem 0;
       position: relative;
       top: 16px;
       left: 16px;
@@ -80,8 +76,6 @@
     .waiting {
       font-size: 14px;
       color: var(--muted);
-      margin: 0;
-      line-height: 1.5;
       position: relative;
       top: 16px;
       left: 16px;
@@ -89,22 +83,21 @@
 
     .waiting a {
       color: var(--text);
-      text-decoration: none;
       border-bottom: 1px solid var(--accent);
+      text-decoration: none;
     }
 
     .lower-block {
       margin-top: 80px;
     }
 
-    /* REFINED BAND */
     .band {
       position: relative;
       left: 50%;
       margin-left: -50vw;
       width: 100vw;
       background: var(--accent);
-      padding: 0.85rem 0; /* slightly slimmer feel */
+      padding: 0.85rem 0;
     }
 
     .band-inner {
@@ -115,30 +108,27 @@
 
     .band-text {
       font-family: 'Playfair Display', serif;
-      font-weight: 500;
-      font-size: clamp(28px, 3vw, 46px); /* properly reduced */
-      line-height: 1.2;
-      color: #ffffff;
+      font-size: clamp(28px, 3vw, 46px);
+      color: var(--band-text);
       margin: 0;
+      line-height: 1.2;
     }
 
     .locations {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 5vw;
-      margin-top: 22px; /* softer spacing */
+      margin-top: 22px;
     }
 
     .location-title {
       font-family: 'Playfair Display', serif;
       font-size: 28px;
-      margin: 0 0 2px 0;
     }
 
     .place {
       font-size: 14px;
       color: var(--accent);
-      margin: 0;
     }
 
     @media (max-width: 900px) {
@@ -157,16 +147,6 @@
         font-size: clamp(70px, 18vw, 130px);
       }
 
-      .launch {
-        top: 16px;
-        left: 16px;
-      }
-
-      .waiting {
-        top: 16px;
-        left: 16px;
-      }
-
       .band-text {
         font-size: clamp(26px, 7vw, 40px);
       }
@@ -179,6 +159,7 @@
 </head>
 
 <body>
+
   <div class="page">
     <section class="hero">
       <div>
@@ -196,7 +177,7 @@
           Coming to<br>
           <span class="city-highlight">Birr</span> and<br>
           <span class="city-highlight">Athlone</span><br>
-          this<br>summer
+          this summer
         </div>
 
         <p class="waiting">
@@ -226,5 +207,32 @@
       </section>
     </div>
   </div>
+
+  <script>
+    const colours = [
+      "#ff5a1f", // orange
+      "#0057ff", // blue
+      "#00a86b", // green
+      "#d1006c", // fuchsia
+      "#b30000", // red
+      "#6a00ff", // violet
+      "#c99700", // premium gold
+      "#d4a017"  // champagne gold
+    ];
+
+    const goldColours = ["#c99700", "#d4a017"];
+
+    const randomColour = colours[Math.floor(Math.random() * colours.length)];
+
+    document.documentElement.style.setProperty('--accent', randomColour);
+
+    // switch text colour for gold
+    if (goldColours.includes(randomColour)) {
+      document.documentElement.style.setProperty('--band-text', '#000000');
+    } else {
+      document.documentElement.style.setProperty('--band-text', '#ffffff');
+    }
+  </script>
+
 </body>
 </html>
