@@ -60,12 +60,17 @@
       justify-self: end;
     }
 
+    /* ✅ CHANGE 1: move "Coming to" down + right */
     .launch {
       font-family: 'Playfair Display', serif;
       font-weight: 500;
       font-size: clamp(36px, 3vw, 54px);
       line-height: 1.02;
       margin: 0 0 1.4rem 0;
+
+      position: relative;
+      top: 8px;
+      left: 8px;
     }
 
     .city-highlight {
@@ -85,18 +90,21 @@
       border-bottom: 1px solid var(--accent);
     }
 
-    /* ONLY CHANGE */
+    /* ✅ CHANGE 2: move band + locations DOWN together */
     .lower-block {
-      margin-top: 60px;
+      position: relative;
+      top: 24px;
     }
 
+    /* ✅ CHANGE 3: slimmer band */
     .band {
       position: relative;
       left: 50%;
       margin-left: -50vw;
       width: 100vw;
       background: var(--accent);
-      padding: 1.35rem 0;
+
+      padding: 10px 0; /* ← slimmer */
     }
 
     .band-inner {
@@ -142,6 +150,7 @@
         <h1 class="title">
           THE<br>NEURO<br>CENTRE
         </h1>
+
         <div class="subtitle">
           NEUROFEEDBACK &amp; PSYCHOTHERAPY
         </div>
@@ -163,6 +172,7 @@
     </section>
 
     <div class="lower-block">
+
       <section class="band">
         <div class="band-inner">
           <p class="band-text">Beyond words, regulation begins</p>
@@ -180,8 +190,8 @@
           <p class="place">@ The Athlone Care Clinic</p>
         </div>
       </section>
-    </div>
 
+    </div>
   </div>
 
 </body>
