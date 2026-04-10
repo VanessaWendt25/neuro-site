@@ -42,7 +42,6 @@
 
     .title {
       font-family: 'Playfair Display', serif;
-      font-weight: 600;
       font-size: clamp(95px, 11.5vw, 195px);
       line-height: 0.85;
       margin: 0 0 1.1rem 0;
@@ -60,10 +59,11 @@
       justify-self: end;
     }
 
+    /* STRONGER ANIMATION */
     .fade-in {
       opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
 
     .fade-in.visible {
@@ -142,31 +142,6 @@
       font-size: 14px;
       color: var(--accent);
     }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .side {
-        width: 100%;
-        max-width: 420px;
-        justify-self: start;
-      }
-
-      .title {
-        font-size: clamp(70px, 18vw, 130px);
-      }
-
-      .band-text {
-        font-size: clamp(26px, 7vw, 40px);
-      }
-
-      .locations {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
 </head>
 
@@ -240,10 +215,14 @@
       document.documentElement.style.setProperty('--band-text', '#000000');
     }
 
+    // STAGGERED ANIMATION
     setTimeout(() => {
       document.getElementById("comingBlock").classList.add("visible");
+    }, 900);
+
+    setTimeout(() => {
       document.getElementById("waitingBlock").classList.add("visible");
-    }, 1000);
+    }, 1200);
   </script>
 
 </body>
