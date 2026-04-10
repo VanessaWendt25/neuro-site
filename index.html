@@ -1,54 +1,264 @@
-/* RIGHT COLUMN ADJUSTMENT */
-.right-block {
-  position: absolute;
-  top: 140px;
-  right: 120px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Neuro Centre</title>
 
-.right-block h2 {
-  transform: translate(16px, 16px);
-}
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Libre+Franklin:wght@300;400;500&display=swap" rel="stylesheet">
 
-.waiting-list {
-  transform: translate(16px, 16px);
-}
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --text: #141414;
+      --muted: #7a736a;
+      --accent: #ff5a1f;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
 
-/* LOWER SECTION (SPACE ABOVE + BAND + LOCATIONS) */
-.lower-block {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  top: calc(100vh - 260px); /* moved DOWN ~15px more */
-}
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Libre Franklin', sans-serif;
+      overflow-x: hidden;
+    }
 
+    .page {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 4vh 6vw 1.2vh 6vw;
+    }
 
-/* SPACE ABOVE */
-.space-above {
-  font-size: 14px;
-  margin-bottom: 6px;
-}
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 6vw;
+      align-items: start;
+    }
 
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(95px, 11.5vw, 195px);
+      line-height: 0.85;
+      margin: 0 0 1.1rem 0;
+    }
 
-/* ORANGE BAND */
-.orange-band {
-  width: 100%;
-  height: 90px; /* SLIMMER */
-  background-color: #F05A28;
-  display: flex;
-  align-items: center;
-}
+    .subtitle {
+      font-size: 18px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0;
+    }
 
-.orange-band h3 {
-  font-size: 48px; /* slightly smaller */
-  margin-left: 80px;
-}
+    .side {
+      width: 420px;
+      justify-self: end;
+    }
 
+    .launch {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: clamp(36px, 3vw, 54px);
+      line-height: 1.02;
+      margin: 0 0 1.4rem 0;
+      position: relative;
+      top: 16px;
+      left: 16px;
+    }
 
-/* LOCATIONS */
-.locations {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 24px;
-  padding: 0 80px;
-}
+    .city-highlight {
+      font-family: 'Libre Franklin', sans-serif;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    .waiting {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+      position: relative;
+      top: 16px;
+      left: 16px;
+    }
+
+    .waiting a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+
+    .lower-block {
+      margin-top: 48px;
+    }
+
+    .band {
+      position: relative;
+      left: 50%;
+      margin-left: -50vw;
+      width: 100vw;
+      background: var(--accent);
+      padding: 0.7rem 0;
+      margin-bottom: 10px;
+    }
+
+    .band-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 0 6vw;
+    }
+
+    .band-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: clamp(34px, 3.6vw, 60px);
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.02;
+    }
+
+    .locations {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5vw;
+      margin-top: 0;
+      align-items: start;
+    }
+
+    .location-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      margin: 0 0 2px 0;
+      line-height: 1.1;
+    }
+
+    .place {
+      font-size: 14px;
+      color: var(--accent);
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 1100px) {
+      .hero {
+        grid-template-columns: 1fr 360px;
+      }
+
+      .side {
+        width: 360px;
+      }
+
+      .title {
+        font-size: clamp(90px, 10.5vw, 180px);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        padding: 5vh 6vw 2vh 6vw;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .side {
+        width: 100%;
+        max-width: 420px;
+        justify-self: start;
+      }
+
+      .title {
+        font-size: clamp(70px, 18vw, 130px);
+      }
+
+      .launch {
+        font-size: clamp(32px, 8vw, 48px);
+        top: 16px;
+        left: 16px;
+      }
+
+      .waiting {
+        top: 16px;
+        left: 16px;
+      }
+
+      .lower-block {
+        margin-top: 48px;
+      }
+
+      .band {
+        padding: 0.65rem 0;
+        margin-bottom: 8px;
+      }
+
+      .band-text {
+        font-size: clamp(30px, 8vw, 44px);
+      }
+
+      .locations {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <section class="hero">
+      <div>
+        <h1 class="title">
+          THE<br>NEURO<br>CENTRE
+        </h1>
+
+        <div class="subtitle">
+          NEUROFEEDBACK &amp; PSYCHOTHERAPY
+        </div>
+      </div>
+
+      <div class="side">
+        <div class="launch">
+          Coming to<br>
+          <span class="city-highlight">Birr</span> and<br>
+          <span class="city-highlight">Athlone</span><br>
+          this<br>summer
+        </div>
+
+        <p class="waiting">
+          Join the waiting list —
+          <a href="mailto:info@neurocentre.ie">info@neurocentre.ie</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="lower-block">
+      <section class="band">
+        <div class="band-inner">
+          <p class="band-text">Beyond words, regulation begins</p>
+        </div>
+      </section>
+
+      <section class="locations">
+        <div>
+          <h2 class="location-title">Birr</h2>
+          <p class="place">@ The Space Above</p>
+        </div>
+
+        <div>
+          <h2 class="location-title">Athlone</h2>
+          <p class="place">@ The Athlone Care Clinic</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
