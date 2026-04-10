@@ -60,6 +60,17 @@
       justify-self: end;
     }
 
+    .fade-in {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .launch {
       font-family: 'Playfair Display', serif;
       font-size: clamp(36px, 3vw, 54px);
@@ -79,6 +90,7 @@
       position: relative;
       top: 16px;
       left: 16px;
+      margin-top: 10px;
     }
 
     .waiting a {
@@ -173,14 +185,14 @@
       </div>
 
       <div class="side">
-        <div class="launch">
+        <div class="launch fade-in" id="comingBlock">
           Coming to<br>
           <span class="city-highlight">Birr</span> and<br>
           <span class="city-highlight">Athlone</span><br>
           this summer
         </div>
 
-        <p class="waiting">
+        <p class="waiting fade-in" id="waitingBlock">
           Join the waiting list —
           <a href="mailto:info@neurocentre.ie">info@neurocentre.ie</a>
         </p>
@@ -210,28 +222,28 @@
 
   <script>
     const colours = [
-      "#ff5a1f", // orange
-      "#0057ff", // blue
-      "#00a86b", // green
-      "#d1006c", // fuchsia
-      "#b30000", // red
-      "#6a00ff", // violet
-      "#c99700", // premium gold
-      "#d4a017"  // champagne gold
+      "#ff5a1f",
+      "#0057ff",
+      "#00a86b",
+      "#d1006c",
+      "#6a00ff",
+      "#c99700",
+      "#d4a017"
     ];
 
     const goldColours = ["#c99700", "#d4a017"];
 
     const randomColour = colours[Math.floor(Math.random() * colours.length)];
-
     document.documentElement.style.setProperty('--accent', randomColour);
 
-    // switch text colour for gold
     if (goldColours.includes(randomColour)) {
       document.documentElement.style.setProperty('--band-text', '#000000');
-    } else {
-      document.documentElement.style.setProperty('--band-text', '#ffffff');
     }
+
+    setTimeout(() => {
+      document.getElementById("comingBlock").classList.add("visible");
+      document.getElementById("waitingBlock").classList.add("visible");
+    }, 1000);
   </script>
 
 </body>
