@@ -13,10 +13,11 @@
       --text: #141414;
       --muted: #7a736a;
       --accent: #ff5a1f;
-      --band-text: #ffffff;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     html, body {
       margin: 0;
@@ -121,7 +122,7 @@
     .band-text {
       font-family: 'Playfair Display', serif;
       font-size: clamp(28px, 3vw, 46px);
-      color: var(--band-text);
+      color: #000000;
       margin: 0;
       line-height: 1.2;
     }
@@ -166,7 +167,7 @@
 
       .hero {
         grid-template-columns: 1fr;
-        gap: 1.75rem;
+        gap: 2rem;
       }
 
       .side {
@@ -180,7 +181,6 @@
       }
 
       .launch {
-        font-size: clamp(32px, 8vw, 48px);
         top: 0;
         left: 0;
       }
@@ -188,29 +188,16 @@
       .waiting {
         top: 0;
         left: 0;
-        margin-top: 12px;
       }
 
-      .lower-block {
-        margin-top: 56px;
-      }
-
-      .band {
-        padding: 0.75rem 0;
-      }
-
-      .band-text {
-        font-size: clamp(26px, 7vw, 40px);
+      .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
       }
 
       .locations {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
-      }
-
-      .fade-in {
-        transform: translateY(20px);
-        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
       }
     }
   </style>
@@ -277,22 +264,18 @@
       "#d4a017"
     ];
 
-    const goldColours = ["#c99700", "#d4a017"];
-
     const randomColour = colours[Math.floor(Math.random() * colours.length)];
     document.documentElement.style.setProperty('--accent', randomColour);
 
-    if (goldColours.includes(randomColour)) {
-      document.documentElement.style.setProperty('--band-text', '#000000');
+    if (window.innerWidth > 900) {
+      setTimeout(() => {
+        document.getElementById("comingBlock").classList.add("visible");
+      }, 900);
+
+      setTimeout(() => {
+        document.getElementById("waitingBlock").classList.add("visible");
+      }, 1200);
     }
-
-    setTimeout(() => {
-      document.getElementById("comingBlock").classList.add("visible");
-    }, 900);
-
-    setTimeout(() => {
-      document.getElementById("waitingBlock").classList.add("visible");
-    }, 1200);
   </script>
 
 </body>
