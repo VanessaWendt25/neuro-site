@@ -12,9 +12,7 @@
       --bg: #f6f3ee;
       --text: #141414;
       --muted: #7a736a;
-      --line: #ddd5ca;
       --accent: #ff5a1f;
-      --white: #ffffff;
     }
 
     * { box-sizing: border-box; }
@@ -25,34 +23,33 @@
       background: var(--bg);
       color: var(--text);
       font-family: 'Libre Franklin', sans-serif;
-      height: 100%;
     }
 
     body {
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     .page {
       max-width: 1500px;
       margin: 0 auto;
-      padding: 4.5vh 6vw 3vh 6vw;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding: 5vh 6vw 3vh 6vw;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
+      grid-template-columns: 1fr 420px;
       gap: 6vw;
       align-items: start;
+    }
+
+    .left-block {
+      min-width: 0;
     }
 
     .title {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
-      font-size: clamp(78px, 9vw, 155px);
+      font-size: clamp(82px, 10vw, 175px);
       line-height: 0.84;
       margin: 0 0 1.2rem 0;
     }
@@ -64,16 +61,17 @@
       color: var(--accent);
     }
 
-    .right-block {
-      padding-top: 0.5vh;
-      max-width: 360px;
+    .side {
+      width: 420px;
+      max-width: 420px;
       justify-self: end;
+      padding-top: 0.5vh;
     }
 
     .launch {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(30px, 3vw, 50px);
-      line-height: 0.96;
+      font-size: clamp(32px, 3vw, 52px);
+      line-height: 0.98;
       margin: 0 0 1.2rem 0;
     }
 
@@ -97,31 +95,33 @@
     }
 
     .band {
-      margin: 2.2vh 0 2vh 0;
+      margin-top: 2vh;
+      margin-bottom: 1.5vh;
       background: var(--accent);
-      padding: 1.2rem 6vw;
+      padding: 1.5rem 6vw;
       margin-left: calc(-6vw);
       margin-right: calc(-6vw);
     }
 
     .band-text {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 3vw, 56px);
+      font-weight: 500;
+      font-size: clamp(34px, 3.6vw, 68px);
       line-height: 1.02;
-      color: var(--white);
+      color: #ffffff;
       margin: 0;
     }
 
     .locations {
+      margin-top: 0.5vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 5vw;
-      padding-top: 1.2rem;
-      border-top: 1px solid var(--line);
-      margin-top: 0.5vh;
+      padding-top: 0;
+      border-top: none;
     }
 
-    .location-title {
+    .city {
       font-family: 'Playfair Display', serif;
       font-weight: 500;
       font-size: clamp(22px, 1.7vw, 32px);
@@ -134,20 +134,36 @@
       margin: 0;
     }
 
-    @media (max-width: 980px) {
-      body {
-        overflow: auto;
+    @media (max-width: 1100px) {
+      .hero {
+        grid-template-columns: 1fr 360px;
       }
 
+      .side {
+        width: 360px;
+        max-width: 360px;
+      }
+
+      .title {
+        font-size: clamp(76px, 9vw, 150px);
+      }
+    }
+
+    @media (max-width: 900px) {
       .page {
-        height: auto;
-        min-height: 100vh;
-        padding: 5vh 6vw 4vh 6vw;
+        padding: 6vh 6vw 4vh 6vw;
       }
 
       .hero {
         grid-template-columns: 1fr;
         gap: 2rem;
+      }
+
+      .side {
+        width: 100%;
+        max-width: 420px;
+        justify-self: start;
+        padding-top: 0;
       }
 
       .title {
@@ -159,12 +175,13 @@
       }
 
       .band {
-        margin: 2rem 0;
-        padding: 1rem 6vw;
+        margin-top: 1.5rem;
+        margin-bottom: 1.25rem;
+        padding: 1.2rem 6vw;
       }
 
       .band-text {
-        font-size: clamp(24px, 7vw, 40px);
+        font-size: clamp(28px, 8vw, 42px);
       }
 
       .locations {
@@ -180,7 +197,7 @@
 <div class="page">
 
   <section class="hero">
-    <div>
+    <div class="left-block">
       <h1 class="title">
         THE<br>
         NEURO<br>
@@ -192,7 +209,7 @@
       </div>
     </div>
 
-    <div class="right-block">
+    <div class="side">
       <div class="launch">
         Coming to<br>
         <span class="city-highlight">Birr</span> and<br>
@@ -214,12 +231,12 @@
 
   <section class="locations">
     <div>
-      <h2 class="location-title">Birr</h2>
+      <h2 class="city">Birr</h2>
       <p class="place">@ The Space Above</p>
     </div>
 
     <div>
-      <h2 class="location-title">Athlone</h2>
+      <h2 class="city">Athlone</h2>
       <p class="place">@ The Athlone Care Clinic</p>
     </div>
   </section>
