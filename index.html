@@ -31,7 +31,7 @@
     .page {
       max-width: 1500px;
       margin: 0 auto;
-      padding: 4vh 6vw 1.2vh 6vw;
+      padding: calc(4vh + 10px) 6vw 1.2vh 6vw;
     }
 
     .hero {
@@ -94,19 +94,17 @@
     }
 
     .lower-block {
-      margin-top: 80px; /* slightly further down */
+      margin-top: 80px;
     }
 
-    /* FIXED BAND */
+    /* REFINED BAND */
     .band {
       position: relative;
       left: 50%;
       margin-left: -50vw;
       width: 100vw;
       background: var(--accent);
-
-      /* IMPORTANT CHANGE */
-      padding: 1rem 0; /* gives vertical space so text is not cut */
+      padding: 0.85rem 0; /* slightly slimmer feel */
     }
 
     .band-inner {
@@ -118,10 +116,8 @@
     .band-text {
       font-family: 'Playfair Display', serif;
       font-weight: 500;
-
-      font-size: clamp(32px, 3.4vw, 54px); /* slightly smaller */
-      line-height: 1.15; /* ensures full sentence visibility */
-
+      font-size: clamp(28px, 3vw, 46px); /* properly reduced */
+      line-height: 1.2;
       color: #ffffff;
       margin: 0;
     }
@@ -130,7 +126,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 5vw;
-      margin-top: 16px;
+      margin-top: 22px; /* softer spacing */
     }
 
     .location-title {
@@ -143,6 +139,41 @@
       font-size: 14px;
       color: var(--accent);
       margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .side {
+        width: 100%;
+        max-width: 420px;
+        justify-self: start;
+      }
+
+      .title {
+        font-size: clamp(70px, 18vw, 130px);
+      }
+
+      .launch {
+        top: 16px;
+        left: 16px;
+      }
+
+      .waiting {
+        top: 16px;
+        left: 16px;
+      }
+
+      .band-text {
+        font-size: clamp(26px, 7vw, 40px);
+      }
+
+      .locations {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
