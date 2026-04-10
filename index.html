@@ -1,199 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Neuro Centre</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Libre+Franklin:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Libre+Franklin:wght@300;400;500&display=swap" rel="stylesheet">
 
-<title>The Neuro Centre</title>
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --text: #141414;
+      --muted: #7a736a;
+      --accent: #ff5a1f;
+    }
 
-<style>
-:root {
-  --bg: #f6f3ee;
-  --text: #141414;
-  --muted: #7a736a;
-  --accent: #ff5a1f;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Libre Franklin', sans-serif;
+      overflow-x: hidden;
+    }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Libre Franklin', sans-serif;
-  overflow-x: hidden;
-}
+    .page {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 4vh 6vw 1.2vh 6vw;
+    }
 
-/* PAGE */
-.page {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 4vh 6vw 1.2vh 6vw;
-}
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 6vw;
+      align-items: start;
+    }
 
-/* HERO */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 6vw;
-  align-items: start;
-}
+    .left-block {
+      min-width: 0;
+    }
 
-.title {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  font-size: clamp(95px, 11.5vw, 195px);
-  line-height: 0.85;
-  margin: 0 0 1.1rem 0;
-}
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(95px, 11.5vw, 195px);
+      line-height: 0.85;
+      margin: 0 0 1.1rem 0;
+    }
 
-.subtitle {
-  font-size: 18px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
+    .subtitle {
+      font-size: 18px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0;
+    }
 
-/* RIGHT BLOCK */
-.side {
-  width: 420px;
-  justify-self: end;
-  padding-top: 0.4vh;
-}
+    .side {
+      width: 420px;
+      max-width: 420px;
+      justify-self: end;
+      padding-top: 0.4vh;
+    }
 
-.launch {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 3vw, 54px);
-  line-height: 1.02;
-  margin: 0 0 1.4rem 0;
-}
+    .launch {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: clamp(36px, 3vw, 54px);
+      line-height: 1.02;
+      margin: 0 0 1.4rem 0;
+    }
 
-.city-highlight {
-  font-family: 'Libre Franklin', sans-serif;
-  color: var(--accent);
-}
+    .city-highlight {
+      font-family: 'Libre Franklin', sans-serif;
+      font-weight: 400;
+      color: var(--accent);
+    }
 
-.waiting {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-}
+    .waiting {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
 
-.waiting a {
-  color: var(--text);
-  text-decoration: none;
-  border-bottom: 1px solid var(--accent);
-}
+    .waiting a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+    }
 
-/* LOWER BLOCK (THIS IS THE ONLY REAL CHANGE) */
-.lower-block {
-  margin-top: 10px; /* 👈 moves band + locations DOWN together */
-}
+    /* only real change: band + locations move DOWN together */
+    .lower-block {
+      margin-top: 10px;
+    }
 
-/* ORANGE BAND */
-.band {
-  position: relative;
-  left: 50%;
-  margin-left: -50vw;
-  width: 100vw;
+    .band {
+      position: relative;
+      left: 50%;
+      margin-left: -50vw;
+      width: 100vw;
+      background: var(--accent);
+      padding: 1.35rem 0;
+      margin-bottom: 0.5rem;
+    }
 
-  background: var(--accent);
-  padding: 1.35rem 0;
+    .band-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 0 6vw;
+    }
 
-  margin-bottom: 0.5rem;
-}
+    .band-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: clamp(40px, 4vw, 70px);
+      line-height: 1.03;
+      color: #ffffff;
+      margin: 0;
+    }
 
-.band-text {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(32px, 3vw, 46px);
-  color: white;
-  padding-left: 6vw;
-}
+    .locations {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5vw;
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
 
-/* LOCATIONS */
-.locations {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 0.4rem;
-}
+    .location-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: clamp(24px, 1.8vw, 34px);
+      margin: 0 0 4px 0;
+      color: var(--text);
+    }
 
-.locations h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  margin: 0 0 0.2rem 0;
-}
+    .place {
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 14px;
+      color: var(--accent);
+      margin: 0;
+    }
 
-.locations p {
-  margin: 0;
-  font-size: 14px;
-  color: var(--accent);
-}
+    @media (max-width: 1100px) {
+      .hero {
+        grid-template-columns: 1fr 360px;
+      }
 
-</style>
+      .side {
+        width: 360px;
+        max-width: 360px;
+      }
+
+      .title {
+        font-size: clamp(90px, 10.5vw, 180px);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        padding: 5vh 6vw 2vh 6vw;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .side {
+        width: 100%;
+        max-width: 420px;
+        justify-self: start;
+        padding-top: 0;
+      }
+
+      .title {
+        font-size: clamp(70px, 18vw, 130px);
+      }
+
+      .launch {
+        font-size: clamp(32px, 8vw, 48px);
+      }
+
+      .band {
+        padding: 1.15rem 0;
+      }
+
+      .band-text {
+        font-size: clamp(30px, 8vw, 44px);
+      }
+
+      .locations {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="page">
+  <div class="page">
+    <section class="hero">
+      <div class="left-block">
+        <h1 class="title">
+          THE<br>
+          NEURO<br>
+          CENTRE
+        </h1>
 
-  <div class="hero">
-
-    <div>
-      <h1 class="title">
-        THE<br>
-        NEURO<br>
-        CENTRE
-      </h1>
-
-      <div class="subtitle">
-        NEUROFEEDBACK & PSYCHOTHERAPY
+        <div class="subtitle">
+          NEUROFEEDBACK &amp; PSYCHOTHERAPY
+        </div>
       </div>
-    </div>
 
-    <div class="side">
-      <h2 class="launch">
-        Coming to<br>
-        <span class="city-highlight">Birr</span> and<br>
-        <span class="city-highlight">Athlone</span><br>
-        this summer
-      </h2>
+      <div class="side">
+        <div class="launch">
+          Coming to<br>
+          <span class="city-highlight">Birr</span> and<br>
+          <span class="city-highlight">Athlone</span><br>
+          this<br>
+          summer
+        </div>
 
-      <div class="waiting">
-        Join the waiting list —<br>
-        <a href="mailto:info@neurocentre.ie">info@neurocentre.ie</a>
+        <p class="waiting">
+          Join the waiting list —
+          <a href="mailto:info@neurocentre.ie">info@neurocentre.ie</a>
+        </p>
       </div>
-    </div>
+    </section>
 
+    <div class="lower-block">
+      <section class="band">
+        <div class="band-inner">
+          <p class="band-text">Beyond words, regulation begins</p>
+        </div>
+      </section>
+
+      <section class="locations">
+        <div>
+          <h2 class="location-title">Birr</h2>
+          <p class="place">@ The Space Above</p>
+        </div>
+
+        <div>
+          <h2 class="location-title">Athlone</h2>
+          <p class="place">@ The Athlone Care Clinic</p>
+        </div>
+      </section>
+    </div>
   </div>
-
-  <!-- LOWER BLOCK MOVED TOGETHER -->
-  <div class="lower-block">
-
-    <div class="band">
-      <div class="band-text">
-        Beyond words, regulation begins
-      </div>
-    </div>
-
-    <div class="locations">
-      <div>
-        <h3>Birr</h3>
-        <p>@ The Space Above</p>
-      </div>
-      <div>
-        <h3>Athlone</h3>
-        <p>@ The Athlone Care Clinic</p>
-      </div>
-    </div>
-
-  </div>
-
-</div>
 
 </body>
 </html>
