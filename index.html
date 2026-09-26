@@ -88,16 +88,16 @@
       color: var(--accent);
     }
 
-    .waiting {
+    .contact {
       font-size: 14px;
       color: var(--muted);
       position: relative;
       top: 16px;
       left: 16px;
-      margin-top: 10px;
+      margin-top: 14px;
     }
 
-    .waiting a {
+    .contact a {
       color: var(--text);
       border-bottom: 1px solid var(--accent);
       text-decoration: none;
@@ -131,9 +131,6 @@
     }
 
     .locations {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5vw;
       margin-top: 22px;
     }
 
@@ -188,7 +185,7 @@
         left: 0;
       }
 
-      .waiting {
+      .contact {
         top: 0;
         left: 0;
       }
@@ -201,10 +198,6 @@
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
-      }
-
-      .locations {
-        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -225,15 +218,13 @@
       </div>
 
       <div class="side">
-        <div class="launch fade-in" id="comingBlock">
-          Coming to<br>
-          <span class="city-highlight">Birr</span> and<br>
-          <span class="city-highlight">Athlone</span><br>
-          this summer
+        <div class="launch fade-in" id="locationBlock">
+          Neurofeedback &amp;<br>
+          Psychotherapy in<br>
+          <span class="city-highlight">Athlone</span>
         </div>
 
-        <p class="waiting fade-in" id="waitingBlock">
-          Join the waiting list —
+        <p class="contact fade-in" id="contactBlock">
           <a href="mailto:info@neurocentre.ie">info@neurocentre.ie</a>
         </p>
       </div>
@@ -247,11 +238,6 @@
       </section>
 
       <section class="locations">
-        <div>
-          <h2 class="location-title">Birr</h2>
-          <p class="place">@ The Space Above</p>
-        </div>
-
         <div>
           <h2 class="location-title">Athlone</h2>
           <p class="place">@ The Athlone Care Clinic</p>
@@ -276,11 +262,11 @@
 
     if (window.innerWidth > 900) {
       setTimeout(() => {
-        document.getElementById("comingBlock").classList.add("visible");
+        document.getElementById("locationBlock").classList.add("visible");
       }, 900);
 
       setTimeout(() => {
-        document.getElementById("waitingBlock").classList.add("visible");
+        document.getElementById("contactBlock").classList.add("visible");
       }, 1200);
     }
   </script>
