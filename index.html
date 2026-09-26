@@ -8,16 +8,19 @@
 
   <link rel="icon" href="favicon.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
 
     :root {
-  --bg: #f6f3ee;
-  --text: #141414;
-  --muted: #7a736a;
- --accent: #C89C4F;
-}
+      --bg: #f6f3ee;
+      --text: #141414;
+      --muted: #7a736a;
+      --accent: #CC9F45;
+    }
 
     * {
       box-sizing: border-box;
@@ -33,11 +36,20 @@
       overflow-x: hidden;
     }
 
+    a {
+      color: inherit;
+    }
+
     .page {
       max-width: 1500px;
       margin: 0 auto;
       padding: calc(4vh + 10px) 6vw 1.2vh 6vw;
     }
+
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       display: grid;
@@ -47,7 +59,9 @@
     }
 
 
-    /* LEFT SIDE */
+    /* =========================
+       LEFT SIDE
+    ========================= */
 
     .title {
       font-family: 'Playfair Display', serif;
@@ -59,13 +73,16 @@
     .subtitle {
       font-family: 'Libre Franklin', sans-serif;
       font-size: 18px;
+      font-weight: 400;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--accent);
     }
 
 
-    /* RIGHT SIDE */
+    /* =========================
+       RIGHT SIDE
+    ========================= */
 
     .side {
       width: 480px;
@@ -99,25 +116,28 @@
     }
 
 
-    /* TEMPORARY ATHLONE
-       Later replaced by calligraphy no. 5 */
+    /* =========================
+       CALLIGRAPHY ATHLONE IMAGE
+    ========================= */
 
-    .city-highlight {
-      display: inline-block;
+    .city-highlight-image {
+      display: block;
 
-      font-family: 'Playfair Display', serif;
-      font-size: 1.45em;
-      font-style: italic;
-      font-weight: 500;
-      line-height: 0.9;
+      width: 330px;
+      max-width: 100%;
 
-      color: var(--accent);
+      height: auto;
 
-      margin-top: 10px;
+      object-fit: contain;
+
+      margin-top: 5px;
+      margin-left: -15px;
     }
 
 
-    /* PROFILE */
+    /* =========================
+       PROFILE
+    ========================= */
 
     .profile {
       display: flex;
@@ -125,11 +145,6 @@
       gap: 28px;
 
       position: relative;
-
-      /*
-        Lower than before so the bottom
-        of the portrait lines up with CENTRE.
-      */
       top: 84px;
       left: 16px;
     }
@@ -159,23 +174,34 @@
       font-weight: 500;
       line-height: 1.05;
 
-      margin: 0 0 6px 0;
+      margin: 0 0 10px 0;
     }
+
+
+    /* same visual language as
+       NEUROFEEDBACK & PSYCHOTHERAPY */
 
     .profile-role {
-      font-family: 'Playfair Display', serif;
-      font-size: 16px;
-      font-style: italic;
-      font-weight: 500;
-      line-height: 1.35;
+      font-family: 'Libre Franklin', sans-serif;
 
-      color: var(--muted);
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
 
-      margin: 0 0 21px 0;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+
+      line-height: 1.5;
+
+      color: var(--accent);
+
+      margin: 0 0 20px 0;
     }
 
 
-    /* BUTTON */
+    /* =========================
+       CONTACT BUTTON
+    ========================= */
 
     .contact-button {
       display: inline-block;
@@ -204,11 +230,18 @@
     }
 
 
-    /* LOWER AREA */
+    /* =========================
+       LOWER AREA
+    ========================= */
 
     .lower-block {
       margin-top: 135px;
     }
+
+
+    /* =========================
+       BEYOND WORDS BAND
+    ========================= */
 
     .band {
       position: relative;
@@ -244,28 +277,82 @@
       line-height: 1.15;
     }
 
-    .locations {
-      margin-top: 22px;
+
+    /* =========================
+       CLINIC
+    ========================= */
+
+    .location-section {
+      margin-top: 30px;
+      padding-bottom: 55px;
     }
 
-    .location-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-
-      margin: 0 0 2px 0;
-    }
-
-    .place {
+    .location-label {
       font-family: 'Libre Franklin', sans-serif;
-      font-size: 14px;
+
+      font-size: 12px;
+      font-weight: 500;
+
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+
+      color: var(--muted);
+
+      margin: 0 0 7px 0;
+    }
+
+    .clinic-link {
+      display: block;
+      width: fit-content;
+
+      font-family: 'Playfair Display', serif;
+
+      font-size: 29px;
+      font-weight: 500;
+      line-height: 1.15;
 
       color: var(--accent);
 
-      margin: 0;
+      text-decoration: none;
+
+      border-bottom: 1px solid transparent;
+
+      transition:
+        border-color 0.2s ease,
+        opacity 0.2s ease;
+    }
+
+    .clinic-link:hover {
+      border-color: var(--accent);
+      opacity: 0.85;
+    }
+
+    .clinic-phone {
+      display: block;
+      width: fit-content;
+
+      margin-top: 8px;
+
+      font-family: 'Libre Franklin', sans-serif;
+
+      font-size: 15px;
+      font-weight: 500;
+
+      color: var(--accent);
+
+      text-decoration: none;
+
+      transition: opacity 0.2s ease;
+    }
+
+    .clinic-phone:hover {
+      opacity: 0.75;
     }
 
 
-    /* TABLET */
+    /* =========================
+       TABLET
+    ========================= */
 
     @media (max-width: 1100px) {
 
@@ -281,6 +368,10 @@
         font-size: clamp(90px, 10.5vw, 180px);
       }
 
+      .city-highlight-image {
+        width: 290px;
+      }
+
       .profile {
         top: 74px;
       }
@@ -292,17 +383,19 @@
     }
 
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 900px) {
 
       .page {
-        padding: 5vh 6vw 3vh 6vw;
+        padding: 4vh 6vw 3vh 6vw;
       }
 
       .hero {
         grid-template-columns: 1fr;
-        gap: 1.6rem;
+        gap: 1.5rem;
       }
 
       .side {
@@ -315,17 +408,31 @@
         font-size: clamp(70px, 18vw, 130px);
       }
 
+      .subtitle {
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
       .launch {
         top: 0;
         left: 0;
       }
 
-      .city-highlight {
-        font-size: 1.4em;
+
+      /* Athlone statement */
+
+      .city-highlight-image {
+        width: min(330px, 92vw);
+
+        margin-top: 3px;
+        margin-left: -10px;
       }
 
+
+      /* PROFILE */
+
       .profile {
-        top: 22px;
+        top: 20px;
         left: 0;
 
         gap: 22px;
@@ -345,7 +452,10 @@
       }
 
       .profile-role {
-        font-size: 14px;
+        font-size: 10px;
+
+        letter-spacing: 0.10em;
+
         margin-bottom: 15px;
       }
 
@@ -354,8 +464,11 @@
         font-size: 13px;
       }
 
+
+      /* LOWER AREA */
+
       .lower-block {
-        margin-top: 65px;
+        margin-top: 62px;
       }
 
       .band {
@@ -371,9 +484,29 @@
         line-height: 1.1;
       }
 
-      .locations {
-        margin-top: 20px;
+
+      /* CLINIC */
+
+      .location-section {
+        margin-top: 26px;
+        padding-bottom: 45px;
       }
+
+      .location-label {
+        font-size: 11px;
+      }
+
+      .clinic-link {
+        font-size: 25px;
+      }
+
+      .clinic-phone {
+        margin-top: 7px;
+        font-size: 15px;
+      }
+
+
+      /* NO FADE ON MOBILE */
 
       .fade-in {
         opacity: 1 !important;
@@ -383,12 +516,14 @@
     }
 
 
-    /* SMALL MOBILE */
+    /* =========================
+       SMALL MOBILE
+    ========================= */
 
     @media (max-width: 480px) {
 
       .page {
-        padding-top: 4vh;
+        padding-top: 3vh;
       }
 
       .profile {
@@ -405,22 +540,42 @@
       }
 
       .profile-role {
-        font-size: 13px;
+        font-size: 9px;
+        letter-spacing: 0.08em;
+      }
+
+      .contact-button {
+        padding: 10px 17px;
+        font-size: 12px;
       }
 
       .lower-block {
-        margin-top: 58px;
+        margin-top: 56px;
+      }
+
+      .clinic-link {
+        font-size: 23px;
+      }
+
+      .clinic-phone {
+        font-size: 14px;
       }
     }
 
   </style>
 </head>
 
+
 <body>
+
 
   <div class="page">
 
+
     <section class="hero">
+
+
+      <!-- LEFT -->
 
       <div>
 
@@ -437,7 +592,11 @@
       </div>
 
 
+
+      <!-- RIGHT -->
+
       <div class="side">
+
 
         <div
           class="launch fade-in"
@@ -445,13 +604,16 @@
         >
 
           Neurofeedback &amp;<br>
-          Psychotherapy in<br>
+          Psychotherapy in
 
-          <span class="city-highlight">
-            Athlone
-          </span>
+          <img
+            src="athlone.png"
+            alt="Athlone"
+            class="city-highlight-image"
+          >
 
         </div>
+
 
 
         <div
@@ -459,39 +621,52 @@
           id="profileBlock"
         >
 
+
           <img
             src="Vanessa.jpeg"
             alt="Vanessa Wendt"
             class="profile-photo"
           >
 
+
           <div class="profile-text">
+
 
             <p class="profile-name">
               Vanessa Wendt
             </p>
 
+
             <p class="profile-role">
               Neurofeedback Psychotherapist
             </p>
 
+
             <a
-              href="mailto:info@neurocentre.ie"
+              href="mailto:vanessa@neurocentre.ie"
               class="contact-button"
             >
               Get in touch
             </a>
 
+
           </div>
+
 
         </div>
 
+
       </div>
+
 
     </section>
 
 
+
+    <!-- LOWER -->
+
     <div class="lower-block">
+
 
       <section class="band">
 
@@ -506,25 +681,43 @@
       </section>
 
 
-      <section class="locations">
 
-        <div>
+      <!-- CLINIC -->
 
-          <h2 class="location-title">
-            Athlone
-          </h2>
+      <section class="location-section">
 
-          <p class="place">
-            @ The Athlone Care Clinic
-          </p>
 
-        </div>
+        <p class="location-label">
+          Based at
+        </p>
+
+
+        <a
+          class="clinic-link"
+          href="https://www.google.com/maps/search/?api=1&query=The+Athlone+Care+Clinic"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          The Athlone Care Clinic
+        </a>
+
+
+        <a
+          class="clinic-phone"
+          href="tel:+353906455302"
+        >
+          Call 090 645 5302
+        </a>
+
 
       </section>
 
+
     </div>
 
+
   </div>
+
 
 
   <script>
@@ -532,22 +725,28 @@
     if (window.innerWidth > 900) {
 
       setTimeout(() => {
+
         document
           .getElementById("locationBlock")
           .classList
           .add("visible");
+
       }, 700);
 
+
       setTimeout(() => {
+
         document
           .getElementById("profileBlock")
           .classList
           .add("visible");
+
       }, 1000);
 
     }
 
   </script>
+
 
 </body>
 </html>
