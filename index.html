@@ -7,14 +7,14 @@
 
   <link rel="icon" href="favicon.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Libre+Franklin:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Libre+Franklin:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --bg: #f6f3ee;
       --text: #141414;
       --muted: #7a736a;
-      --accent: #ff5a1f;
+      --accent: #b8a58c;
     }
 
     * {
@@ -38,7 +38,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1fr 420px;
+      grid-template-columns: 1fr 460px;
       gap: 6vw;
       align-items: start;
     }
@@ -58,7 +58,7 @@
     }
 
     .side {
-      width: 420px;
+      width: 460px;
       justify-self: end;
     }
 
@@ -84,21 +84,25 @@
     }
 
     .city-highlight {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
       color: var(--accent);
+      font-size: 1.2em;
     }
 
     .profile {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 24px;
       position: relative;
-      top: 40px;
+      top: 42px;
       left: 16px;
     }
 
     .profile-photo {
-      width: 92px;
-      height: 112px;
+      width: 160px;
+      height: 190px;
       object-fit: cover;
       border-radius: 18px;
       flex-shrink: 0;
@@ -107,40 +111,44 @@
     .profile-text {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       justify-content: center;
     }
 
     .profile-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      line-height: 1.05;
-      margin: 0 0 6px 0;
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.15;
+      margin: 0 0 8px 0;
     }
 
     .profile-role {
       font-size: 13px;
-      line-height: 1.4;
+      line-height: 1.5;
       color: var(--muted);
-      margin: 0;
+      margin: 0 0 18px 0;
     }
 
-    .contact {
-      font-size: 14px;
-      color: var(--muted);
-      position: relative;
-      top: 56px;
-      left: 16px;
-      margin-top: 14px;
-    }
-
-    .contact a {
+    .contact-button {
+      display: inline-block;
+      padding: 11px 18px;
+      border: 1px solid var(--accent);
+      border-radius: 999px;
       color: var(--text);
-      border-bottom: 1px solid var(--accent);
       text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .contact-button:hover {
+      background: var(--accent);
+      color: #ffffff;
     }
 
     .lower-block {
-      margin-top: 130px;
+      margin-top: 135px;
     }
 
     .band {
@@ -184,15 +192,20 @@
 
     @media (max-width: 1100px) {
       .hero {
-        grid-template-columns: 1fr 360px;
+        grid-template-columns: 1fr 400px;
       }
 
       .side {
-        width: 360px;
+        width: 400px;
       }
 
       .title {
         font-size: clamp(90px, 10.5vw, 180px);
+      }
+
+      .profile-photo {
+        width: 140px;
+        height: 168px;
       }
     }
 
@@ -224,6 +237,7 @@
       .profile {
         top: 18px;
         left: 0;
+        gap: 16px;
       }
 
       .profile-photo {
@@ -232,16 +246,21 @@
       }
 
       .profile-name {
-        font-size: 23px;
+        font-size: 21px;
       }
 
-      .contact {
-        top: 32px;
-        left: 0;
+      .profile-role {
+        font-size: 12px;
+        margin-bottom: 12px;
+      }
+
+      .contact-button {
+        padding: 9px 15px;
+        font-size: 12px;
       }
 
       .lower-block {
-        margin-top: 78px;
+        margin-top: 72px;
       }
 
       .fade-in {
@@ -287,13 +306,16 @@
           <div class="profile-text">
             <p class="profile-name">Vanessa Wendt</p>
             <p class="profile-role">Neurofeedback Psychotherapist</p>
+
+            <a
+              href="mailto:info@neurocentre.ie"
+              class="contact-button"
+            >
+              Get in touch
+            </a>
           </div>
 
         </div>
-
-        <p class="contact fade-in" id="contactBlock">
-          <a href="mailto:info@neurocentre.ie">info@neurocentre.ie</a>
-        </p>
 
       </div>
     </section>
@@ -319,43 +341,19 @@
   </div>
 
   <script>
-    const colours = [
-      "#ff5a1f",
-      "#0057ff",
-      "#00a86b",
-      "#d1006c",
-      "#6a00ff",
-      "#c99700",
-      "#d4a017"
-    ];
-
-    const randomColour =
-      colours[Math.floor(Math.random() * colours.length)];
-
-    document.documentElement.style.setProperty(
-      '--accent',
-      randomColour
-    );
-
     if (window.innerWidth > 900) {
 
       setTimeout(() => {
         document
           .getElementById("locationBlock")
           .classList.add("visible");
-      }, 900);
+      }, 700);
 
       setTimeout(() => {
         document
           .getElementById("profileBlock")
           .classList.add("visible");
-      }, 1100);
-
-      setTimeout(() => {
-        document
-          .getElementById("contactBlock")
-          .classList.add("visible");
-      }, 1300);
+      }, 1000);
 
     }
   </script>
