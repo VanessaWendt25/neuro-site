@@ -84,6 +84,7 @@
     .fade-in {
       opacity: 0;
       transform: translateY(40px);
+
       transition:
         opacity 0.8s ease-out,
         transform 0.8s ease-out;
@@ -110,9 +111,11 @@
 
     .city-highlight-image {
       display: block;
+
       width: 330px;
       max-width: 100%;
       height: auto;
+
       object-fit: contain;
 
       margin-top: 5px;
@@ -157,10 +160,14 @@
       font-size: 34px;
       font-style: italic;
       font-weight: 500;
-      line-height: 1;
-      letter-spacing: -0.02em;
 
-      margin: 0 0 10px 0;
+      line-height: 1;
+
+      letter-spacing: -0.02em;
+      word-spacing: -3px;
+
+      margin: 0 0 10px -3px;
+
       white-space: nowrap;
     }
 
@@ -187,6 +194,7 @@
 
     .contact-button {
       display: inline-block;
+
       padding: 13px 24px;
 
       background: var(--accent);
@@ -220,8 +228,10 @@
 
     .band {
       position: relative;
+
       left: 50%;
       margin-left: -50vw;
+
       width: 100vw;
 
       background: var(--accent);
@@ -246,6 +256,7 @@
       color: #29241f;
 
       margin: 0;
+
       line-height: 1.15;
     }
 
@@ -278,6 +289,7 @@
 
       font-size: 28px;
       font-weight: 500;
+
       line-height: 1.15;
 
       color: var(--text);
@@ -384,6 +396,7 @@
         font-size: 11px;
         line-height: 1.45;
         letter-spacing: 0.14em;
+
         max-width: 100%;
         white-space: normal;
       }
@@ -395,6 +408,7 @@
 
       .city-highlight-image {
         width: min(330px, 92vw);
+
         margin-top: 3px;
         margin-left: -10px;
       }
@@ -413,12 +427,17 @@
       .profile-photo {
         width: 145px;
         height: 175px;
+
         border-radius: 18px;
       }
 
       .profile-name {
         font-size: 24px;
+
         letter-spacing: -0.03em;
+        word-spacing: -3px;
+
+        margin-left: -3px;
       }
 
       .profile-role {
@@ -494,7 +513,11 @@
 
       .profile-name {
         font-size: 22px;
+
         letter-spacing: -0.03em;
+        word-spacing: -3px;
+
+        margin-left: -3px;
       }
 
       .profile-role {
