@@ -9,7 +9,7 @@
   <link rel="icon" href="favicon.png">
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Libre+Franklin:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Libre+Franklin:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   >
 
@@ -17,10 +17,11 @@
 
     :root {
       --bg: #f6f3ee;
-      --text: #141414;
-      --muted: #7a736a;
+      --text: #151412;
+      --muted: #756f67;
       --accent: #CC9F45;
-      --line: rgba(20, 20, 20, 0.72);
+      --line: rgba(21, 20, 18, 0.72);
+      --soft-line: rgba(21, 20, 18, 0.25);
     }
 
     * {
@@ -33,14 +34,13 @@
 
     body {
       margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+
       background: var(--bg);
       color: var(--text);
-      font-family: "Libre Franklin", sans-serif;
-      overflow-x: hidden;
-    }
 
-    a {
-      color: inherit;
+      font-family: "Libre Franklin", sans-serif;
     }
 
     img {
@@ -48,173 +48,230 @@
       max-width: 100%;
     }
 
+    a {
+      color: inherit;
+    }
 
-    /* =========================================================
+
+    /* ==========================================================
        HERO
-    ========================================================= */
+    ========================================================== */
 
     .hero {
-      min-height: 720px;
-      max-width: 1500px;
+      max-width: 1540px;
       margin: 0 auto;
-      padding: 58px 6vw 70px;
+
+      min-height: 650px;
+
+      padding: 58px 5.5vw 78px;
 
       display: grid;
-      grid-template-columns: minmax(0, 1.65fr) minmax(330px, 0.75fr);
-      column-gap: 8vw;
+      grid-template-columns: minmax(0, 1.48fr) minmax(430px, 0.82fr);
+      gap: clamp(65px, 7vw, 130px);
 
       align-items: start;
     }
 
-    .hero-left {
-      padding-top: 0;
-    }
+
+    /* HERO LEFT */
 
     .hero-title {
       margin: 0;
 
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(112px, 11.3vw, 188px);
+
+      font-size: clamp(110px, 11.2vw, 188px);
       font-weight: 400;
-      line-height: 0.76;
+
+      line-height: 0.77;
       letter-spacing: -0.055em;
     }
 
     .hero-subtitle {
-      margin-top: 26px;
+      margin-top: 28px;
+
+      color: var(--accent);
 
       font-size: 15px;
       font-weight: 400;
+
       letter-spacing: 0.20em;
       text-transform: uppercase;
-
-      color: var(--accent);
     }
 
 
     /* HERO RIGHT */
 
     .hero-right {
-      padding-top: 5px;
-      max-width: 430px;
+      width: 100%;
+      max-width: 540px;
+
+      justify-self: end;
+
+      padding-top: 7px;
     }
 
     .hero-location {
       margin: 0;
 
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(44px, 3.5vw, 57px);
+
+      font-size: clamp(37px, 2.8vw, 48px);
       font-weight: 400;
-      line-height: 0.91;
+
+      line-height: 1;
+      letter-spacing: -0.025em;
+
+      white-space: nowrap;
     }
 
     .athlone-image {
-      width: 310px;
+      width: 320px;
       height: auto;
 
-      margin: 20px 0 34px -12px;
+      margin: 18px 0 50px -10px;
     }
 
     .hero-name {
-      margin: 0 0 6px 0;
+      margin: 0 0 7px;
 
       font-family: "Cormorant Garamond", serif;
-      font-size: 36px;
+
+      font-size: 38px;
       font-style: italic;
       font-weight: 500;
+
       line-height: 1;
     }
 
     .hero-role {
-      margin: 0 0 24px 0;
-
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
+      margin: 0 0 27px;
 
       color: var(--accent);
-    }
 
-    .contact-button {
-      display: inline-block;
-
-      padding: 13px 25px;
-
-      border-radius: 999px;
-      background: var(--accent);
-      border: 1px solid var(--accent);
-
-      color: white;
-      text-decoration: none;
-
-      font-size: 14px;
+      font-size: 11px;
       font-weight: 500;
 
-      transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
-    }
-
-    .contact-button:hover {
-      transform: translateY(-2px);
-      opacity: 0.88;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
 
-    /* =========================================================
-       STATEMENT
-    ========================================================= */
+    /* HERO BUTTON */
 
-    .statement {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+    .hero-button {
+      display: inline-flex;
 
-      min-height: 440px;
-
-      display: flex;
       align-items: center;
       justify-content: center;
 
-      padding: 100px 8vw;
+      width: 210px;
+      height: 62px;
+
+      border: 1px solid var(--text);
+      border-radius: 0;
+
+      background: transparent;
+
+      color: var(--text);
+      text-decoration: none;
+
+      font-size: 13px;
+      font-weight: 500;
+
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
-    .statement p {
-      max-width: 1050px;
-      margin: 0 auto;
+    .hero-button:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
 
-      text-align: center;
+
+    /* ==========================================================
+       STATEMENT + ROSA PORTRAIT
+    ========================================================== */
+
+    .statement-section {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+
+      min-height: 590px;
+
+      display: grid;
+      grid-template-columns: 56% 44%;
+    }
+
+    .statement-copy {
+      display: flex;
+      align-items: center;
+
+      padding: 90px 7vw 90px 9vw;
+    }
+
+    .statement-copy blockquote {
+      max-width: 760px;
+
+      margin: 0;
 
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(60px, 6.7vw, 100px);
-      font-weight: 400;
+
+      font-size: clamp(64px, 6vw, 98px);
       font-style: italic;
+      font-weight: 400;
+
       line-height: 0.96;
       letter-spacing: -0.035em;
     }
 
+    .statement-image-area {
+      border-left: 1px solid var(--line);
 
-    /* =========================================================
-       GENERAL CONTENT
-    ========================================================= */
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 68px 5vw;
+    }
+
+    .statement-image {
+      width: min(430px, 88%);
+      height: auto;
+
+      object-fit: cover;
+    }
+
+
+    /* ==========================================================
+       SHARED TYPOGRAPHY
+    ========================================================== */
 
     .eyebrow {
-      margin: 0 0 26px 0;
+      margin: 0 0 26px;
 
       color: var(--accent);
 
       font-size: 12px;
       font-weight: 500;
+
       letter-spacing: 0.20em;
       text-transform: uppercase;
     }
 
     .section-title {
-      margin: 0 0 34px 0;
+      margin: 0 0 35px;
 
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(56px, 5vw, 82px);
+
+      font-size: clamp(64px, 5.3vw, 88px);
       font-weight: 400;
+
       line-height: 0.93;
       letter-spacing: -0.035em;
     }
@@ -223,79 +280,88 @@
       font-weight: 400;
     }
 
-    .copy {
+    .copy,
+    .more-copy {
       font-size: 17px;
       font-weight: 300;
+
       line-height: 1.75;
     }
 
-    .copy p {
-      margin: 0 0 24px 0;
+    .copy p,
+    .more-copy p {
+      margin: 0 0 24px;
     }
 
-    .copy p:last-child {
+    .copy p:last-child,
+    .more-copy p:last-child {
       margin-bottom: 0;
     }
 
 
-    /* =========================================================
-       CENTERED INTRO
-    ========================================================= */
+    /* ==========================================================
+       WHAT IS NEUROFEEDBACK
+    ========================================================== */
 
-    .centered-section {
+    .intro-section {
+      padding: 110px 7vw 122px;
+
       border-bottom: 1px solid var(--line);
-
-      padding: 115px 7vw 125px;
     }
 
-    .centered-inner {
-      max-width: 930px;
+    .intro-inner {
+      max-width: 980px;
       margin: 0 auto;
     }
 
-    .centered-section .section-title {
-      font-size: clamp(65px, 5.8vw, 92px);
+    .intro-section .section-title {
+      font-size: clamp(72px, 6vw, 98px);
     }
 
     .research-note {
-      margin-top: 40px;
-      padding-top: 28px;
+      margin-top: 43px;
+      padding-top: 30px;
 
-      border-top: 1px solid rgba(20, 20, 20, 0.28);
+      border-top: 1px solid var(--soft-line);
     }
 
-    .research-note-title {
-      margin: 0 0 12px 0;
+    .research-heading {
+      margin: 0 0 14px;
 
       font-family: "Cormorant Garamond", serif;
-      font-size: 31px;
+
+      font-size: 33px;
       font-style: italic;
       font-weight: 500;
+
       line-height: 1.2;
     }
 
 
-    /* =========================================================
-       SPLIT SECTIONS
-    ========================================================= */
+    /* ==========================================================
+       GENERAL SPLIT
+    ========================================================== */
 
     .split {
       display: grid;
+
       border-bottom: 1px solid var(--line);
     }
 
     .split-text {
       display: flex;
+
       align-items: center;
     }
 
     .split-text-inner {
       width: 100%;
-      max-width: 680px;
+      max-width: 720px;
     }
 
     .split-image {
       display: flex;
+
       align-items: center;
       justify-content: center;
     }
@@ -303,209 +369,228 @@
     .split-image img {
       width: 100%;
       height: auto;
+
       object-fit: cover;
     }
 
 
-    /* =========================================================
-       TYPE A
-       smaller image left / larger text right
-    ========================================================= */
+    /* ==========================================================
+       WHY TRY NEUROFEEDBACK
+       image 45 / text 55
+    ========================================================== */
 
-    .split-a {
-      grid-template-columns: 43% 57%;
-      min-height: 720px;
+    .split-room {
+      grid-template-columns: 45% 55%;
+
+      min-height: 780px;
     }
 
-    .split-a .split-image {
+    .split-room .split-image {
+      padding: 76px 4.5vw;
+
       border-right: 1px solid var(--line);
-      padding: 110px 9vw;
     }
 
-    .split-a .split-image img {
-      width: min(390px, 85%);
+    .split-room .split-image img {
+      width: min(630px, 94%);
     }
 
-    .split-a .split-text {
-      padding: 95px 7vw;
+    .split-room .split-text {
+      padding: 90px 6.5vw;
     }
 
 
-    /* =========================================================
-       TYPE B
-       text left / portrait image right
-    ========================================================= */
+    /* ==========================================================
+       GET STARTED
+       text 59 / image 41
+    ========================================================== */
 
-    .split-b {
-      grid-template-columns: 57% 43%;
+    .split-start {
+      grid-template-columns: 59% 41%;
+
+      min-height: 760px;
+    }
+
+    .split-start .split-text {
+      padding: 92px 6.5vw;
+
+      border-right: 1px solid var(--line);
+    }
+
+    .split-start .split-image {
+      padding: 74px 4.5vw;
+    }
+
+    .split-start .split-image img {
+      width: min(485px, 92%);
+    }
+
+
+    /* ==========================================================
+       SESSION
+       image 48 / text 52
+    ========================================================== */
+
+    .split-session {
+      grid-template-columns: 48% 52%;
+
+      min-height: 780px;
+    }
+
+    .split-session .split-image {
+      padding: 70px 4vw;
+
+      border-right: 1px solid var(--line);
+    }
+
+    .split-session .split-image img {
+      width: min(660px, 95%);
+    }
+
+    .split-session .split-text {
+      padding: 90px 6vw;
+    }
+
+
+    /* ==========================================================
+       TRAINING PROCESS
+       text 58 / image 42
+    ========================================================== */
+
+    .split-process {
+      grid-template-columns: 58% 42%;
+
       min-height: 730px;
     }
 
-    .split-b .split-text {
-      padding: 95px 7vw;
+    .split-process .split-text {
+      padding: 88px 6.5vw;
+
       border-right: 1px solid var(--line);
     }
 
-    .split-b .split-image {
-      padding: 95px 8vw;
+    .split-process .split-image {
+      padding: 75px 4.5vw;
     }
 
-    .split-b .split-image img {
-      width: min(360px, 82%);
-    }
-
-
-    /* =========================================================
-       TYPE C
-       image left / text right
-    ========================================================= */
-
-    .split-c {
-      grid-template-columns: 47% 53%;
-      min-height: 720px;
-    }
-
-    .split-c .split-image {
-      border-right: 1px solid var(--line);
-      padding: 105px 7vw;
-    }
-
-    .split-c .split-image img {
-      width: min(520px, 84%);
-    }
-
-    .split-c .split-text {
-      padding: 95px 7vw;
+    .split-process .split-image img {
+      width: min(575px, 94%);
     }
 
 
-    /* =========================================================
-       TYPE D
-       text left / small detail image right
-    ========================================================= */
+    /* ==========================================================
+       ASSESSMENT
+    ========================================================== */
 
-    .split-d {
-      grid-template-columns: 61% 39%;
-      min-height: 670px;
-    }
+    .assessment-note {
+      margin-top: 38px;
+      padding-top: 20px;
 
-    .split-d .split-text {
-      padding: 90px 6.5vw;
-      border-right: 1px solid var(--line);
-    }
+      border-top: 1px solid var(--soft-line);
 
-    .split-d .split-image {
-      padding: 100px 7vw;
-    }
+      color: var(--muted);
 
-    .split-d .split-image img {
-      width: min(430px, 90%);
+      font-size: 11px;
+      font-weight: 400;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
 
-    /* =========================================================
+    /* ==========================================================
        LEARN MORE
-    ========================================================= */
+    ========================================================== */
 
     .learn-more {
-      margin-top: 30px;
+      margin-top: 38px;
     }
 
     .learn-button {
       appearance: none;
       -webkit-appearance: none;
 
-      padding: 0 0 6px 0;
+      display: inline-flex;
 
-      border: 0;
-      border-bottom: 1px solid var(--text);
+      align-items: center;
+      justify-content: center;
+
+      width: 225px;
+      height: 62px;
+
+      padding: 0 28px;
+
+      border: 1px solid var(--text);
+      border-radius: 0;
 
       background: transparent;
+
       color: var(--text);
 
       cursor: pointer;
 
       font-family: "Libre Franklin", sans-serif;
-      font-size: 12px;
+
+      font-size: 13px;
       font-weight: 500;
-      letter-spacing: 0.18em;
+
+      letter-spacing: 0.11em;
       text-transform: uppercase;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .learn-button:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .learn-button.hidden {
+      display: none;
     }
 
     .more-copy {
       display: none;
 
-      margin-top: 34px;
-
-      /*
-         IMPORTANT:
-         exact same size as normal body copy
-      */
-      font-size: 17px;
-      font-weight: 300;
-      line-height: 1.75;
+      margin-top: 36px;
     }
 
     .more-copy.open {
       display: block;
     }
 
-    .more-copy p {
-      margin: 0 0 24px 0;
-    }
 
-    .more-copy p:last-child {
-      margin-bottom: 0;
-    }
-
-
-    /* =========================================================
-       ASSESSMENT NOTE
-    ========================================================= */
-
-    .assessment-note {
-      margin-top: 34px;
-      padding-top: 19px;
-
-      border-top: 1px solid rgba(20, 20, 20, 0.28);
-
-      color: var(--muted);
-
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-    }
-
-
-    /* =========================================================
-       CONTACT / CLINIC
-    ========================================================= */
+    /* ==========================================================
+       FOOTER
+    ========================================================== */
 
     .clinic {
-      border-bottom: 1px solid var(--line);
-
-      padding: 70px 7vw 78px;
+      padding: 90px 7vw 100px;
     }
 
     .clinic-inner {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr auto;
+
       gap: 60px;
+
+      align-items: center;
     }
 
     .clinic-label {
-      margin: 0 0 12px 0;
+      margin: 0 0 14px;
 
-      color: var(--muted);
+      color: var(--accent);
 
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 500;
-      letter-spacing: 0.18em;
+
+      letter-spacing: 0.20em;
       text-transform: uppercase;
     }
 
@@ -513,9 +598,12 @@
       margin: 0;
 
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(42px, 4vw, 62px);
+
+      font-size: clamp(54px, 4.5vw, 74px);
       font-weight: 400;
-      line-height: 1;
+
+      line-height: 0.95;
+      letter-spacing: -0.025em;
     }
 
     .clinic-name a {
@@ -524,50 +612,91 @@
 
     .clinic-actions {
       display: flex;
-      gap: 14px;
+
+      gap: 16px;
       flex-wrap: wrap;
     }
 
     .clinic-button {
-      display: inline-block;
+      display: inline-flex;
 
-      padding: 13px 22px;
+      align-items: center;
+      justify-content: center;
+
+      min-width: 205px;
+      height: 60px;
+
+      padding: 0 25px;
 
       border: 1px solid var(--text);
-      border-radius: 999px;
-
-      text-decoration: none;
-
-      font-size: 14px;
-      font-weight: 400;
+      border-radius: 0;
 
       background: transparent;
+
+      color: var(--text);
+      text-decoration: none;
+
+      font-size: 13px;
+      font-weight: 500;
+
+      letter-spacing: 0.05em;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
-    .clinic-button.call {
-      color: var(--accent);
+    .clinic-button:hover {
+      background: var(--text);
+      color: var(--bg);
     }
 
 
-    /* =========================================================
+    /* ==========================================================
+       TABLET
+    ========================================================== */
+
+    @media (max-width: 1150px) {
+
+      .hero {
+        grid-template-columns: minmax(0, 1.25fr) minmax(390px, 0.8fr);
+
+        gap: 5vw;
+      }
+
+      .hero-location {
+        font-size: 37px;
+      }
+
+      .statement-copy blockquote {
+        font-size: clamp(58px, 6vw, 82px);
+      }
+
+      .statement-image {
+        width: min(390px, 90%);
+      }
+
+    }
+
+
+    /* ==========================================================
        MOBILE
-    ========================================================= */
+    ========================================================== */
 
     @media (max-width: 900px) {
 
       .hero {
-        min-height: auto;
+        min-height: 0;
 
         grid-template-columns: 1fr;
 
-        padding: 42px 6vw 65px;
+        padding: 38px 6vw 70px;
 
-        row-gap: 65px;
+        gap: 62px;
       }
 
       .hero-title {
-        font-size: clamp(76px, 22vw, 135px);
-        line-height: 0.78;
+        font-size: clamp(76px, 21vw, 130px);
       }
 
       .hero-subtitle {
@@ -577,17 +706,20 @@
 
       .hero-right {
         max-width: 100%;
+
+        justify-self: start;
       }
 
       .hero-location {
-        font-size: 45px;
-        line-height: 0.96;
+        font-size: clamp(31px, 8vw, 42px);
+
+        white-space: normal;
       }
 
       .athlone-image {
         width: 270px;
-        margin-top: 12px;
-        margin-bottom: 30px;
+
+        margin-bottom: 38px;
       }
 
       .hero-name {
@@ -597,20 +729,36 @@
 
       /* Statement */
 
-      .statement {
-        min-height: 330px;
-        padding: 80px 7vw;
+      .statement-section {
+        grid-template-columns: 1fr;
+
+        min-height: 0;
       }
 
-      .statement p {
-        font-size: clamp(49px, 13vw, 72px);
+      .statement-copy {
+        padding: 75px 7vw 70px;
+      }
+
+      .statement-copy blockquote {
+        font-size: clamp(53px, 13vw, 76px);
+      }
+
+      .statement-image-area {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+
+        padding: 60px 7vw 70px;
+      }
+
+      .statement-image {
+        width: min(430px, 78vw);
       }
 
 
       /* Typography */
 
       .section-title {
-        font-size: clamp(50px, 13vw, 70px);
+        font-size: clamp(52px, 13vw, 74px);
       }
 
       .copy,
@@ -620,103 +768,90 @@
       }
 
 
-      /* Centered */
+      /* Intro */
 
-      .centered-section {
+      .intro-section {
         padding: 80px 7vw 90px;
       }
 
-      .centered-section .section-title {
-        font-size: clamp(54px, 14vw, 75px);
+      .intro-section .section-title {
+        font-size: clamp(56px, 14vw, 78px);
       }
 
 
-      /* All split sections */
+      /* Splits */
 
-      .split-a,
-      .split-b,
-      .split-c,
-      .split-d {
+      .split-room,
+      .split-start,
+      .split-session,
+      .split-process {
         grid-template-columns: 1fr;
+
         min-height: 0;
       }
 
-      .split-text,
-      .split-image {
+      .split-image,
+      .split-text {
         border-right: 0 !important;
       }
 
       .split-text {
+        padding: 74px 7vw !important;
+
         border-bottom: 1px solid var(--line);
       }
 
-      .split-a .split-text,
-      .split-b .split-text,
-      .split-c .split-text,
-      .split-d .split-text {
-        padding: 75px 7vw;
+      .split-image {
+        padding: 58px 7vw 68px !important;
       }
 
-      .split-a .split-image,
-      .split-b .split-image,
-      .split-c .split-image,
-      .split-d .split-image {
-        padding: 65px 7vw 75px;
+      .split-room .split-image img,
+      .split-session .split-image img,
+      .split-process .split-image img {
+        width: min(620px, 88vw);
       }
 
-      .split-a .split-image img {
-        width: min(430px, 80vw);
+      .split-start .split-image img {
+        width: min(470px, 82vw);
       }
 
-      .split-b .split-image img {
-        width: min(360px, 72vw);
-      }
 
-      .split-c .split-image img {
-        width: min(480px, 84vw);
-      }
+      /* order */
 
-      .split-d .split-image img {
-        width: min(430px, 82vw);
-      }
-
-      /*
-         On mobile, keep natural reading order
-      */
-
-      .split-a .split-image,
-      .split-c .split-image {
-        order: 2;
-      }
-
-      .split-a .split-text,
-      .split-c .split-text {
+      .split-room .split-text,
+      .split-session .split-text {
         order: 1;
       }
 
+      .split-room .split-image,
+      .split-session .split-image {
+        order: 2;
+      }
 
-      /* Clinic */
+
+      /* Footer */
 
       .clinic {
-        padding: 58px 7vw 64px;
+        padding: 68px 7vw 78px;
       }
 
       .clinic-inner {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 30px;
+        grid-template-columns: 1fr;
+
+        gap: 36px;
       }
 
       .clinic-name {
-        font-size: 45px;
+        font-size: 52px;
       }
+
     }
 
 
-    @media (max-width: 480px) {
+    @media (max-width: 520px) {
 
       .hero {
-        padding-top: 30px;
+        padding-top: 28px;
       }
 
       .hero-title {
@@ -724,33 +859,27 @@
       }
 
       .hero-location {
-        font-size: 39px;
+        font-size: 31px;
       }
 
       .athlone-image {
-        width: 235px;
+        width: 240px;
       }
 
-      .hero-name {
-        font-size: 29px;
+      .hero-button,
+      .learn-button {
+        width: 205px;
+        height: 58px;
       }
 
-      .hero-role {
-        font-size: 10px;
+      .clinic-actions {
+        width: 100%;
       }
 
-      .statement {
-        min-height: 290px;
+      .clinic-button {
+        width: 100%;
       }
 
-      .statement p {
-        font-size: 12vw;
-      }
-
-      .copy,
-      .more-copy {
-        font-size: 16px;
-      }
     }
 
   </style>
@@ -760,13 +889,13 @@
 <body>
 
 
-  <!-- =======================================================
+  <!-- ========================================================
        HERO
-  ======================================================== -->
+  ========================================================= -->
 
   <section class="hero">
 
-    <div class="hero-left">
+    <div>
 
       <h1 class="hero-title">
         THE<br>
@@ -784,8 +913,7 @@
     <div class="hero-right">
 
       <p class="hero-location">
-        Neurofeedback &amp;<br>
-        Psychotherapy in
+        Neurofeedback &amp; Psychotherapy in
       </p>
 
       <img
@@ -804,7 +932,7 @@
 
       <a
         href="mailto:vanessa@neurocentre.ie"
-        class="contact-button"
+        class="hero-button"
       >
         Get in touch
       </a>
@@ -815,27 +943,43 @@
 
 
 
-  <!-- =======================================================
+  <!-- ========================================================
        STATEMENT
-  ======================================================== -->
+  ========================================================= -->
 
-  <section class="statement">
+  <section class="statement-section">
 
-    <p>
-      Beyond words, regulation begins.
-    </p>
+    <div class="statement-copy">
+
+      <blockquote>
+        “Beyond words,<br>
+        regulation begins.”
+      </blockquote>
+
+    </div>
+
+
+    <div class="statement-image-area">
+
+      <img
+        src="Portrait Rosa.png"
+        alt="Vanessa Wendt"
+        class="statement-image"
+      >
+
+    </div>
 
   </section>
 
 
 
-  <!-- =======================================================
+  <!-- ========================================================
        WHAT IS NEUROFEEDBACK
-  ======================================================== -->
+  ========================================================= -->
 
-  <section class="centered-section">
+  <section class="intro-section">
 
-    <div class="centered-inner">
+    <div class="intro-inner">
 
       <p class="eyebrow">
         Neurofeedback
@@ -844,6 +988,7 @@
       <h2 class="section-title">
         What is <em>neurofeedback?</em>
       </h2>
+
 
       <div class="copy">
 
@@ -856,13 +1001,14 @@
 
         <p>
           You do not have to consciously control anything or work out what
-          your brain is doing. Much of this learning happens outside
-          conscious awareness.
+          your brain is doing. Much of this learning happens outside conscious
+          awareness.
         </p>
+
 
         <div class="research-note">
 
-          <p class="research-note-title">
+          <p class="research-heading">
             Neurofeedback is not snake oil or mumbo jumbo.
           </p>
 
@@ -884,16 +1030,17 @@
           <div class="more-copy">
 
             <p>
-              Neurofeedback gives the brain information about its own activity
-              as it happens. The brain can use this information without you
-              having to consciously work anything out.
+              Research has explored neurofeedback across a wide range of areas,
+              including ADHD, autism, anxiety, sleep difficulties, PTSD,
+              complex and developmental trauma, emotional dysregulation,
+              dissociation, chronic pain, and difficulties with attention,
+              memory, planning and organisation.
             </p>
 
             <p>
-              It is a little like walking while having an absorbing
-              conversation. You do not consciously calculate every step,
-              uneven surface or change in balance. Your body continuously
-              makes those adjustments in the background.
+              ILF neurofeedback is also used in trauma-informed work with
+              clients who have experienced attachment disruption, separation
+              and adoption-related trauma.
             </p>
 
           </div>
@@ -908,17 +1055,17 @@
 
 
 
-  <!-- =======================================================
-       WHY I ADDED NEUROFEEDBACK
-  ======================================================== -->
+  <!-- ========================================================
+       WHY YOU SHOULD TRY NEUROFEEDBACK
+  ========================================================= -->
 
-  <section class="split split-a">
+  <section class="split split-room">
 
     <div class="split-image">
 
       <img
         src="Zimmer.png"
-        alt="Neurofeedback room"
+        alt="The Neuro Centre therapy room"
       >
 
     </div>
@@ -933,34 +1080,28 @@
         </p>
 
         <h2 class="section-title">
-          Why I added<br>
-          <em>neurofeedback</em>
+          Why you should try<br>
+          <em>neurofeedback!</em>
         </h2>
+
 
         <div class="copy">
 
           <p>
-            As psychotherapists, we aim to help our clients understand why
-            they respond the way they do in challenging or triggering
-            situations. We explore patterns, triggers and where those
-            responses may come from.
+            As psychotherapists, we aim to help our clients understand why they
+            respond the way they do in challenging or triggering situations.
+            We explore recurring patterns, past experiences and what may be
+            driving those responses. But understanding a pattern does not
+            always mean clients are able to change their responses.
           </p>
 
           <p>
-            But understanding a pattern does not always mean clients are able
-            to change those responses.
-          </p>
-
-          <p>
-            Sometimes the nervous system continues to react in the same
-            familiar way, even when clients understand their patterns very
-            well. That is one of the reasons I trained in neurofeedback.
-          </p>
-
-          <p>
-            It gives me another way of helping clients regulate their nervous
-            system alongside psychotherapy, giving the brain the opportunity
-            to practise regulation itself.
+            Sometimes the nervous system continues to react in the same familiar
+            way, even when clients understand their patterns very well. That is
+            one of the reasons I trained in neurofeedback. It gives me another
+            way of helping my clients regulate their nervous system alongside
+            psychotherapy, while giving their brains the opportunity to
+            practise regulation itself.
           </p>
 
           <p>
@@ -978,11 +1119,11 @@
 
 
 
-  <!-- =======================================================
-       GET STARTED
-  ======================================================== -->
+  <!-- ========================================================
+       HOW DO WE GET STARTED
+  ========================================================= -->
 
-  <section class="split split-b">
+  <section class="split split-start">
 
     <div class="split-text">
 
@@ -996,6 +1137,7 @@
           How do we<br>
           <em>get started?</em>
         </h2>
+
 
         <div class="copy">
 
@@ -1013,15 +1155,18 @@
           </p>
 
           <p>
-            As part of the assessment, I also use a Continuous Performance
-            Test to look at areas such as attention, concentration and
-            response consistency.
+            As part of the assessment, I also use a Continuous Performance Test
+            to look at areas such as attention, concentration and response
+            consistency. Together, the questionnaire, our conversation and the
+            test give me a much clearer picture of where to begin and how to
+            tailor the neurofeedback training to you.
           </p>
 
         </div>
 
+
         <div class="assessment-note">
-          Assessment · approximately 2 hours
+          Assessment · approximately 2 hours · €150
         </div>
 
       </div>
@@ -1033,7 +1178,7 @@
 
       <img
         src="Vanessa Sessel.png"
-        alt="Therapy room"
+        alt="The Neuro Centre"
       >
 
     </div>
@@ -1042,11 +1187,11 @@
 
 
 
-  <!-- =======================================================
-       TYPICAL SESSION
-  ======================================================== -->
+  <!-- ========================================================
+       SESSION
+  ========================================================= -->
 
-  <section class="split split-c">
+  <section class="split split-session">
 
     <div class="split-image">
 
@@ -1068,29 +1213,25 @@
 
         <h2 class="section-title">
           What does a<br>
-          neurofeedback<br>
-          <em>session</em> look like?
+          neurofeedback <em>session</em><br>
+          look like?
         </h2>
+
 
         <div class="copy">
 
           <p>
-            You come into my practice and settle into a comfortable chair.
-            I place five small sensors on your head. These are connected to
-            a computer and simply pick up information about your brain
-            activity.
+            We always start by looking at how you have been since your last
+            session and what, if anything, has changed. This might be something
+            in your sleep, mood, focus, stress levels or simply how you have
+            been feeling in everyday life.
           </p>
 
           <p>
-            While you relax, you watch an animation on the screen. The
-            animation changes in response to what your brain is doing, so
-            your brain receives information about its own activity in real
-            time.
-          </p>
-
-          <p>
-            You do not have to work anything out or try to control your
-            brain. You can simply sit back and watch.
+            Even small changes can be important. Your feedback helps me
+            understand how your nervous system is responding and whether the
+            training should stay the same or be adjusted. This ongoing exchange
+            is an important part of our work together.
           </p>
 
 
@@ -1100,23 +1241,57 @@
               Learn more
             </button>
 
+
             <div class="more-copy">
 
               <p>
-                We always start by looking at how you have been since your
-                last session and what, if anything, has changed.
+                You then settle into a comfortable chair and I place five small
+                sensors on your head. These are connected to a computer and
+                simply pick up information about your brain activity.
               </p>
 
               <p>
-                This might be something in your sleep, mood, focus, stress
-                levels or simply how you have been feeling in everyday life.
-                Even small changes can be important.
+                While you relax, you watch an animation on the screen. The
+                computer continuously reads your brain activity through the
+                sensors and tracks changes in your brainwaves. The animation
+                responds in real time, giving your brain immediate feedback
+                about its own activity.
               </p>
 
               <p>
-                Your feedback helps me understand how your nervous system is
-                responding and whether the training should stay the same or
-                be adjusted.
+                For clients who are anxious, the brain may be spending too much
+                time in overdrive. For clients who feel low, slowed down or
+                disconnected, it may be doing the opposite. Neurofeedback gives
+                the brain feedback about these patterns so it can gradually
+                regulate itself more effectively.
+              </p>
+
+              <p>
+                Neurodivergent clients can also find regulation harder at times,
+                especially when there is a lot of sensory input, stress or
+                overwhelm. Neurofeedback can help the nervous system become
+                more flexible, making it easier to move between alert, calm,
+                focused and relaxed states.
+              </p>
+
+              <p>
+                The interesting part is that most of this learning happens
+                outside conscious awareness. You do not have to concentrate,
+                work anything out or try to control your brain.
+              </p>
+
+              <p>
+                It is a little like going for a walk while chatting to someone.
+                You may be completely absorbed in the conversation, while your
+                body automatically adjusts to uneven ground, steps over roots
+                and keeps you balanced without you having to think about every
+                movement.
+              </p>
+
+              <p>
+                ILF neurofeedback works in a similar way. Your nervous system
+                receives feedback and begins to adjust in the background, while
+                you simply sit back and watch.
               </p>
 
             </div>
@@ -1133,11 +1308,11 @@
 
 
 
-  <!-- =======================================================
+  <!-- ========================================================
        TRAINING PROCESS
-  ======================================================== -->
+  ========================================================= -->
 
-  <section class="split split-d">
+  <section class="split split-process">
 
     <div class="split-text">
 
@@ -1152,19 +1327,20 @@
           the <em>training process?</em>
         </h2>
 
+
         <div class="copy">
 
           <p>
             In the beginning, neurofeedback is usually recommended twice a
-            week. As regulation becomes more stable, the gaps between
-            sessions can gradually become longer.
+            week. As regulation becomes more stable, the gaps between sessions
+            can gradually become longer.
           </p>
 
           <p>
-            Neurofeedback is a gradual process. At the beginning, we often
-            need to work through specific starting placements and protocols
-            before we can move towards the areas that are most closely
-            connected to your main concerns.
+            Neurofeedback is a gradual process. At the beginning, we often need
+            to work through specific starting placements and protocols before
+            we can move towards the areas that are most closely connected to
+            your main concerns.
           </p>
 
 
@@ -1174,18 +1350,38 @@
               Learn more
             </button>
 
+
             <div class="more-copy">
 
               <p>
-                The training is adjusted as we go. What you notice between
-                sessions helps guide the next step.
+                These early steps are important because they show us how your
+                nervous system responds and allow us to build the training
+                carefully.
               </p>
 
               <p>
-                Some people notice changes relatively early, while for others
-                the process develops more gradually. The aim is not to rush
-                the nervous system, but to give it repeated opportunities to
-                practise regulation.
+                This means that neurofeedback takes a little patience. We do
+                not simply rush straight towards the main issue or change
+                several things at once. We follow established protocols,
+                closely review how you respond and adjust the training step by
+                step as we go.
+              </p>
+
+              <p>
+                The sensor placements and other aspects of the training can
+                change as we learn more about how your nervous system responds.
+              </p>
+
+              <p>
+                Neurofeedback is not a miracle cure that changes everything
+                overnight. The brain needs time and repetition to learn new
+                patterns of regulation.
+              </p>
+
+              <p>
+                Many clients have somewhere between 15 and 40 sessions,
+                although everyone responds differently and the process is
+                adapted along the way.
               </p>
 
             </div>
@@ -1212,11 +1408,11 @@
 
 
 
-  <!-- =======================================================
+  <!-- ========================================================
        CLINIC
-  ======================================================== -->
+  ========================================================= -->
 
-  <section class="clinic">
+  <footer class="clinic">
 
     <div class="clinic-inner">
 
@@ -1244,15 +1440,15 @@
       <div class="clinic-actions">
 
         <a
-          class="clinic-button call"
           href="tel:+353906455302"
+          class="clinic-button"
         >
           Call 090 645 5302
         </a>
 
         <a
-          class="clinic-button"
           href="mailto:vanessa@neurocentre.ie"
+          class="clinic-button"
         >
           Email Vanessa
         </a>
@@ -1261,13 +1457,13 @@
 
     </div>
 
-  </section>
+  </footer>
 
 
 
-  <!-- =======================================================
-       LEARN MORE SCRIPT
-  ======================================================== -->
+  <!-- ========================================================
+       LEARN MORE
+  ========================================================= -->
 
   <script>
 
@@ -1278,11 +1474,8 @@
 
       button.addEventListener("click", function() {
 
-        const isOpen = content.classList.toggle("open");
-
-        button.textContent = isOpen
-          ? "Close"
-          : "Learn more";
+        content.classList.add("open");
+        button.classList.add("hidden");
 
       });
 
