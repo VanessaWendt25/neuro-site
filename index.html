@@ -7,14 +7,14 @@
 
   <link rel="icon" href="favicon.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Libre+Franklin:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --bg: #f6f3ee;
       --text: #141414;
-      --muted: #7a736a;
-      --accent: #b8a58c;
+      --muted: #756f67;
+      --accent: #cdb58f;
     }
 
     * {
@@ -26,7 +26,7 @@
       padding: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: 'Libre Franklin', sans-serif;
+      font-family: 'Cormorant Garamond', serif;
       overflow-x: hidden;
     }
 
@@ -38,7 +38,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1fr 460px;
+      grid-template-columns: 1fr 470px;
       gap: 6vw;
       align-items: start;
     }
@@ -51,6 +51,7 @@
     }
 
     .subtitle {
+      font-family: 'Playfair Display', serif;
       font-size: 18px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -58,7 +59,7 @@
     }
 
     .side {
-      width: 460px;
+      width: 470px;
       justify-self: end;
     }
 
@@ -84,27 +85,29 @@
     }
 
     .city-highlight {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-weight: 600;
+      display: inline-block;
+      font-family: 'Allura', cursive;
+      font-size: 1.75em;
+      font-weight: 400;
+      line-height: 0.85;
       color: var(--accent);
-      font-size: 1.2em;
+      margin-top: 8px;
     }
 
     .profile {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 26px;
       position: relative;
-      top: 42px;
+      top: 54px;
       left: 16px;
     }
 
     .profile-photo {
-      width: 160px;
-      height: 190px;
+      width: 175px;
+      height: 210px;
       object-fit: cover;
-      border-radius: 18px;
+      border-radius: 20px;
       flex-shrink: 0;
     }
 
@@ -116,39 +119,49 @@
     }
 
     .profile-name {
-      font-family: 'Libre Franklin', sans-serif;
-      font-size: 24px;
-      font-weight: 500;
-      line-height: 1.15;
-      margin: 0 0 8px 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 27px;
+      font-weight: 600;
+      line-height: 1.05;
+      margin: 0 0 5px 0;
     }
 
     .profile-role {
-      font-size: 13px;
-      line-height: 1.5;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-style: italic;
+      font-weight: 500;
+      line-height: 1.25;
       color: var(--muted);
-      margin: 0 0 18px 0;
+      margin: 0 0 20px 0;
     }
 
     .contact-button {
       display: inline-block;
-      padding: 11px 18px;
+      padding: 12px 22px;
+      background: var(--accent);
       border: 1px solid var(--accent);
       border-radius: 999px;
-      color: var(--text);
+
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 600;
+
+      color: #ffffff;
       text-decoration: none;
-      font-size: 13px;
-      font-weight: 500;
-      transition: background 0.25s ease, color 0.25s ease;
+
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
     }
 
     .contact-button:hover {
-      background: var(--accent);
-      color: #ffffff;
+      transform: translateY(-2px);
+      opacity: 0.88;
     }
 
     .lower-block {
-      margin-top: 135px;
+      margin-top: 150px;
     }
 
     .band {
@@ -157,7 +170,7 @@
       margin-left: -50vw;
       width: 100vw;
       background: var(--accent);
-      padding: 0.85rem 0;
+      padding: 0.9rem 0;
     }
 
     .band-inner {
@@ -167,11 +180,13 @@
     }
 
     .band-text {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 3vw, 46px);
-      color: #000000;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 3vw, 45px);
+      font-style: italic;
+      font-weight: 500;
+      color: #2b2723;
       margin: 0;
-      line-height: 1.2;
+      line-height: 1.15;
     }
 
     .locations {
@@ -185,18 +200,19 @@
     }
 
     .place {
-      font-size: 14px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
       color: var(--accent);
       margin: 0;
     }
 
     @media (max-width: 1100px) {
       .hero {
-        grid-template-columns: 1fr 400px;
+        grid-template-columns: 1fr 410px;
       }
 
       .side {
-        width: 400px;
+        width: 410px;
       }
 
       .title {
@@ -204,8 +220,8 @@
       }
 
       .profile-photo {
-        width: 140px;
-        height: 168px;
+        width: 155px;
+        height: 186px;
       }
     }
 
@@ -234,33 +250,38 @@
         left: 0;
       }
 
+      .city-highlight {
+        font-size: 1.65em;
+      }
+
       .profile {
-        top: 18px;
+        top: 28px;
         left: 0;
-        gap: 16px;
+        gap: 17px;
       }
 
       .profile-photo {
         width: 82px;
         height: 100px;
+        border-radius: 16px;
       }
 
       .profile-name {
-        font-size: 21px;
+        font-size: 24px;
       }
 
       .profile-role {
-        font-size: 12px;
+        font-size: 15px;
         margin-bottom: 12px;
       }
 
       .contact-button {
-        padding: 9px 15px;
-        font-size: 12px;
+        padding: 9px 17px;
+        font-size: 15px;
       }
 
       .lower-block {
-        margin-top: 72px;
+        margin-top: 85px;
       }
 
       .fade-in {
@@ -305,7 +326,10 @@
 
           <div class="profile-text">
             <p class="profile-name">Vanessa Wendt</p>
-            <p class="profile-role">Neurofeedback Psychotherapist</p>
+
+            <p class="profile-role">
+              Neurofeedback Psychotherapist
+            </p>
 
             <a
               href="mailto:info@neurocentre.ie"
