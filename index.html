@@ -84,6 +84,7 @@
     .fade-in {
       opacity: 0;
       transform: translateY(40px);
+
       transition:
         opacity 0.8s ease-out,
         transform 0.8s ease-out;
@@ -106,13 +107,15 @@
       margin: 0;
     }
 
-    /* ATHLONE IMAGE */
+    /* ATHLONE */
 
     .city-highlight-image {
       display: block;
+
       width: 330px;
       max-width: 100%;
       height: auto;
+
       object-fit: contain;
 
       margin-top: 5px;
@@ -127,8 +130,10 @@
       gap: 28px;
 
       position: relative;
-      top: 84px;
+      top: 0;
       left: 16px;
+
+      margin-top: 58px;
     }
 
     .profile-photo {
@@ -166,17 +171,19 @@
       font-style: normal;
       font-weight: 400;
 
-      letter-spacing: 0.12em;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
 
-      line-height: 1.5;
+      line-height: 1.4;
 
       color: var(--accent);
 
       margin: 0 0 20px 0;
+
+      white-space: nowrap;
     }
 
-    /* GET IN TOUCH BUTTON */
+    /* GET IN TOUCH */
 
     .contact-button {
       display: inline-block;
@@ -184,8 +191,7 @@
       padding: 13px 24px;
 
       background: var(--accent);
-
-      border: 1px solid var(--border-dark);
+      border: 1px solid var(--accent);
       border-radius: 999px;
 
       font-family: 'Libre Franklin', sans-serif;
@@ -205,10 +211,10 @@
       opacity: 0.88;
     }
 
-    /* LOWER AREA */
+    /* LOWER */
 
     .lower-block {
-      margin-top: 135px;
+      margin-top: 115px;
     }
 
     /* GOLD BAND */
@@ -254,6 +260,20 @@
       padding-bottom: 55px;
     }
 
+    .location-label {
+      font-family: 'Libre Franklin', sans-serif;
+
+      font-size: 12px;
+      font-weight: 500;
+
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+
+      color: var(--muted);
+
+      margin: 0 0 8px 0;
+    }
+
     .clinic-link {
       display: block;
       width: fit-content;
@@ -262,23 +282,17 @@
 
       font-size: 28px;
       font-weight: 500;
-
       line-height: 1.15;
 
       color: var(--text);
 
       text-decoration: none;
 
-      border-bottom: 1px solid transparent;
-
-      transition:
-        border-color 0.2s ease,
-        opacity 0.2s ease;
+      transition: opacity 0.2s ease;
     }
 
     .clinic-link:hover {
-      border-color: var(--accent);
-      opacity: 0.85;
+      opacity: 0.72;
     }
 
     /* CALL BUTTON */
@@ -334,7 +348,8 @@
       }
 
       .profile {
-        top: 74px;
+        top: 0;
+        margin-top: 48px;
       }
 
       .profile-photo {
@@ -383,8 +398,10 @@
       }
 
       .profile {
-        top: 20px;
+        top: 0;
         left: 0;
+
+        margin-top: 38px;
 
         gap: 22px;
 
@@ -403,9 +420,8 @@
       }
 
       .profile-role {
-        font-size: 10px;
-        letter-spacing: 0.10em;
-        margin-bottom: 15px;
+        font-size: 12px;
+        letter-spacing: 0.08em;
       }
 
       .contact-button {
@@ -435,6 +451,10 @@
         padding-bottom: 45px;
       }
 
+      .location-label {
+        font-size: 11px;
+      }
+
       .clinic-link {
         font-size: 26px;
       }
@@ -462,6 +482,7 @@
 
       .profile {
         gap: 17px;
+        margin-top: 34px;
       }
 
       .profile-photo {
@@ -474,8 +495,8 @@
       }
 
       .profile-role {
-        font-size: 9px;
-        letter-spacing: 0.08em;
+        font-size: 11px;
+        letter-spacing: 0.06em;
       }
 
       .contact-button {
@@ -588,6 +609,10 @@
       </section>
 
       <section class="location-section">
+
+        <p class="location-label">
+          Based at
+        </p>
 
         <a
           class="clinic-link"
