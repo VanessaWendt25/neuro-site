@@ -20,6 +20,7 @@
       --text: #141414;
       --muted: #7a736a;
       --accent: #CC9F45;
+      --border-dark: #2a2927;
     }
 
     * {
@@ -46,12 +47,16 @@
       padding: calc(4vh + 10px) 6vw 1.2vh 6vw;
     }
 
+    /* HERO */
+
     .hero {
       display: grid;
       grid-template-columns: 1fr 480px;
       gap: 6vw;
       align-items: start;
     }
+
+    /* LEFT */
 
     .title {
       font-family: 'Playfair Display', serif;
@@ -68,6 +73,8 @@
       text-transform: uppercase;
       color: var(--accent);
     }
+
+    /* RIGHT */
 
     .side {
       width: 480px;
@@ -91,11 +98,15 @@
       font-family: 'Playfair Display', serif;
       font-size: clamp(36px, 3vw, 54px);
       line-height: 1.02;
+
       position: relative;
       top: 16px;
       left: 16px;
+
       margin: 0;
     }
+
+    /* ATHLONE IMAGE */
 
     .city-highlight-image {
       display: block;
@@ -103,14 +114,18 @@
       max-width: 100%;
       height: auto;
       object-fit: contain;
+
       margin-top: 5px;
       margin-left: -15px;
     }
+
+    /* PROFILE */
 
     .profile {
       display: flex;
       align-items: center;
       gap: 28px;
+
       position: relative;
       top: 84px;
       left: 16px;
@@ -119,9 +134,12 @@
     .profile-photo {
       width: 190px;
       height: 225px;
+
       object-fit: cover;
       object-position: center top;
+
       border-radius: 20px;
+
       flex-shrink: 0;
     }
 
@@ -137,32 +155,46 @@
       font-size: 29px;
       font-weight: 500;
       line-height: 1.05;
+
       margin: 0 0 10px 0;
     }
 
     .profile-role {
       font-family: 'Libre Franklin', sans-serif;
+
       font-size: 12px;
       font-style: normal;
       font-weight: 400;
+
       letter-spacing: 0.12em;
       text-transform: uppercase;
+
       line-height: 1.5;
+
       color: var(--accent);
+
       margin: 0 0 20px 0;
     }
 
+    /* GET IN TOUCH BUTTON */
+
     .contact-button {
       display: inline-block;
+
       padding: 13px 24px;
+
       background: var(--accent);
-      border: 1px solid var(--accent);
+
+      border: 1px solid var(--border-dark);
       border-radius: 999px;
+
       font-family: 'Libre Franklin', sans-serif;
       font-size: 14px;
       font-weight: 500;
+
       color: #ffffff;
       text-decoration: none;
+
       transition:
         transform 0.2s ease,
         opacity 0.2s ease;
@@ -173,16 +205,24 @@
       opacity: 0.88;
     }
 
+    /* LOWER AREA */
+
     .lower-block {
       margin-top: 135px;
     }
 
+    /* GOLD BAND */
+
     .band {
       position: relative;
+
       left: 50%;
       margin-left: -50vw;
+
       width: 100vw;
+
       background: var(--accent);
+
       padding: 0.95rem 0;
     }
 
@@ -194,39 +234,43 @@
 
     .band-text {
       font-family: 'Playfair Display', serif;
+
       font-size: clamp(30px, 3vw, 45px);
+
       font-style: italic;
       font-weight: 500;
+
       color: #29241f;
+
       margin: 0;
+
       line-height: 1.15;
     }
+
+    /* CLINIC */
 
     .location-section {
       margin-top: 30px;
       padding-bottom: 55px;
     }
 
-    .location-label {
-      font-family: 'Libre Franklin', sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 0 0 7px 0;
-    }
-
     .clinic-link {
       display: block;
       width: fit-content;
+
       font-family: 'Playfair Display', serif;
-      font-size: 29px;
+
+      font-size: 28px;
       font-weight: 500;
+
       line-height: 1.15;
-      color: var(--accent);
+
+      color: var(--text);
+
       text-decoration: none;
+
       border-bottom: 1px solid transparent;
+
       transition:
         border-color 0.2s ease,
         opacity 0.2s ease;
@@ -237,21 +281,39 @@
       opacity: 0.85;
     }
 
+    /* CALL BUTTON */
+
     .clinic-phone {
-      display: block;
-      width: fit-content;
-      margin-top: 8px;
+      display: inline-block;
+
+      margin-top: 12px;
+
+      padding: 11px 18px;
+
+      border: 1px solid var(--border-dark);
+      border-radius: 999px;
+
+      background: transparent;
+
       font-family: 'Libre Franklin', sans-serif;
-      font-size: 15px;
-      font-weight: 500;
+      font-size: 16px;
+      font-weight: 600;
+
       color: var(--accent);
+
       text-decoration: none;
-      transition: opacity 0.2s ease;
+
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
     .clinic-phone:hover {
-      opacity: 0.75;
+      background: rgba(204, 159, 69, 0.08);
+      transform: translateY(-1px);
     }
+
+    /* TABLET */
 
     @media (max-width: 1100px) {
 
@@ -280,6 +342,8 @@
         height: 205px;
       }
     }
+
+    /* MOBILE */
 
     @media (max-width: 900px) {
 
@@ -321,13 +385,16 @@
       .profile {
         top: 20px;
         left: 0;
+
         gap: 22px;
+
         align-items: flex-end;
       }
 
       .profile-photo {
         width: 145px;
         height: 175px;
+
         border-radius: 18px;
       }
 
@@ -368,16 +435,13 @@
         padding-bottom: 45px;
       }
 
-      .location-label {
-        font-size: 11px;
-      }
-
       .clinic-link {
-        font-size: 25px;
+        font-size: 26px;
       }
 
       .clinic-phone {
-        margin-top: 7px;
+        margin-top: 11px;
+        padding: 11px 17px;
         font-size: 15px;
       }
 
@@ -387,6 +451,8 @@
         transition: none !important;
       }
     }
+
+    /* SMALL MOBILE */
 
     @media (max-width: 480px) {
 
@@ -422,7 +488,7 @@
       }
 
       .clinic-link {
-        font-size: 23px;
+        font-size: 24px;
       }
 
       .clinic-phone {
@@ -523,17 +589,13 @@
 
       <section class="location-section">
 
-        <p class="location-label">
-          Based at
-        </p>
-
         <a
           class="clinic-link"
-          href="https://www.google.com/maps/search/?api=1&query=The+Athlone+Care+Clinic"
+          href="https://www.google.com/maps/search/?api=1&query=Athlone+Care+Clinic"
           target="_blank"
           rel="noopener noreferrer"
         >
-          The Athlone Care Clinic
+          Athlone Care Clinic
         </a>
 
         <a
