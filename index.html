@@ -9,7 +9,7 @@
   <link rel="icon" href="favicon.png">
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Libre+Franklin:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,500;1,600&family=Libre+Franklin:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
     rel="stylesheet"
   >
 
@@ -84,7 +84,6 @@
     .fade-in {
       opacity: 0;
       transform: translateY(40px);
-
       transition:
         opacity 0.8s ease-out,
         transform 0.8s ease-out;
@@ -111,11 +110,9 @@
 
     .city-highlight-image {
       display: block;
-
       width: 330px;
       max-width: 100%;
       height: auto;
-
       object-fit: contain;
 
       margin-top: 5px;
@@ -156,13 +153,15 @@
     }
 
     .profile-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 35px;
+      font-family: 'Bodoni Moda', serif;
+      font-size: 34px;
       font-style: italic;
       font-weight: 500;
       line-height: 1;
+      letter-spacing: -0.02em;
 
       margin: 0 0 10px 0;
+      white-space: nowrap;
     }
 
     .profile-role {
@@ -188,7 +187,6 @@
 
     .contact-button {
       display: inline-block;
-
       padding: 13px 24px;
 
       background: var(--accent);
@@ -222,10 +220,8 @@
 
     .band {
       position: relative;
-
       left: 50%;
       margin-left: -50vw;
-
       width: 100vw;
 
       background: var(--accent);
@@ -250,7 +246,6 @@
       color: #29241f;
 
       margin: 0;
-
       line-height: 1.15;
     }
 
@@ -358,7 +353,7 @@
       }
 
       .profile-name {
-        font-size: 32px;
+        font-size: 31px;
       }
     }
 
@@ -386,8 +381,11 @@
       }
 
       .subtitle {
-        font-size: 13px;
+        font-size: 11px;
         line-height: 1.45;
+        letter-spacing: 0.14em;
+        max-width: 100%;
+        white-space: normal;
       }
 
       .launch {
@@ -405,9 +403,9 @@
         top: 0;
         left: 0;
 
-        margin-top: 38px;
+        margin-top: 22px;
 
-        gap: 22px;
+        gap: 16px;
 
         align-items: flex-end;
       }
@@ -415,17 +413,17 @@
       .profile-photo {
         width: 145px;
         height: 175px;
-
         border-radius: 18px;
       }
 
       .profile-name {
-        font-size: 30px;
+        font-size: 24px;
+        letter-spacing: -0.03em;
       }
 
       .profile-role {
-        font-size: 12px;
-        letter-spacing: 0.08em;
+        font-size: 9px;
+        letter-spacing: 0.06em;
       }
 
       .contact-button {
@@ -485,8 +483,8 @@
       }
 
       .profile {
-        gap: 17px;
-        margin-top: 34px;
+        gap: 14px;
+        margin-top: 18px;
       }
 
       .profile-photo {
@@ -495,12 +493,13 @@
       }
 
       .profile-name {
-        font-size: 28px;
+        font-size: 22px;
+        letter-spacing: -0.03em;
       }
 
       .profile-role {
-        font-size: 11px;
-        letter-spacing: 0.06em;
+        font-size: 8px;
+        letter-spacing: 0.05em;
       }
 
       .contact-button {
