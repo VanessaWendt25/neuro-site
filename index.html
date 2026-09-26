@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Neuro Centre</title>
 
-  <!-- FAVICON -->
   <link rel="icon" href="favicon.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Libre+Franklin:wght@300;400;500&display=swap" rel="stylesheet">
@@ -88,11 +87,48 @@
       color: var(--accent);
     }
 
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      position: relative;
+      top: 40px;
+      left: 16px;
+    }
+
+    .profile-photo {
+      width: 92px;
+      height: 112px;
+      object-fit: cover;
+      border-radius: 18px;
+      flex-shrink: 0;
+    }
+
+    .profile-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .profile-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      line-height: 1.05;
+      margin: 0 0 6px 0;
+    }
+
+    .profile-role {
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--muted);
+      margin: 0;
+    }
+
     .contact {
       font-size: 14px;
       color: var(--muted);
       position: relative;
-      top: 16px;
+      top: 56px;
       left: 16px;
       margin-top: 14px;
     }
@@ -104,7 +140,7 @@
     }
 
     .lower-block {
-      margin-top: 80px;
+      margin-top: 130px;
     }
 
     .band {
@@ -185,13 +221,27 @@
         left: 0;
       }
 
+      .profile {
+        top: 18px;
+        left: 0;
+      }
+
+      .profile-photo {
+        width: 82px;
+        height: 100px;
+      }
+
+      .profile-name {
+        font-size: 23px;
+      }
+
       .contact {
-        top: 0;
+        top: 32px;
         left: 0;
       }
 
       .lower-block {
-        margin-top: 40px;
+        margin-top: 78px;
       }
 
       .fade-in {
@@ -207,6 +257,7 @@
 
   <div class="page">
     <section class="hero">
+
       <div>
         <h1 class="title">
           THE<br>NEURO<br>CENTRE
@@ -218,22 +269,42 @@
       </div>
 
       <div class="side">
+
         <div class="launch fade-in" id="locationBlock">
           Neurofeedback &amp;<br>
           Psychotherapy in<br>
           <span class="city-highlight">Athlone</span>
         </div>
 
+        <div class="profile fade-in" id="profileBlock">
+
+          <img
+            src="Vanessa.jpeg"
+            alt="Vanessa Wendt"
+            class="profile-photo"
+          >
+
+          <div class="profile-text">
+            <p class="profile-name">Vanessa Wendt</p>
+            <p class="profile-role">Neurofeedback Psychotherapist</p>
+          </div>
+
+        </div>
+
         <p class="contact fade-in" id="contactBlock">
           <a href="mailto:info@neurocentre.ie">info@neurocentre.ie</a>
         </p>
+
       </div>
     </section>
 
     <div class="lower-block">
+
       <section class="band">
         <div class="band-inner">
-          <p class="band-text">Beyond words, regulation begins...</p>
+          <p class="band-text">
+            Beyond words, regulation begins...
+          </p>
         </div>
       </section>
 
@@ -243,6 +314,7 @@
           <p class="place">@ The Athlone Care Clinic</p>
         </div>
       </section>
+
     </div>
   </div>
 
@@ -257,17 +329,34 @@
       "#d4a017"
     ];
 
-    const randomColour = colours[Math.floor(Math.random() * colours.length)];
-    document.documentElement.style.setProperty('--accent', randomColour);
+    const randomColour =
+      colours[Math.floor(Math.random() * colours.length)];
+
+    document.documentElement.style.setProperty(
+      '--accent',
+      randomColour
+    );
 
     if (window.innerWidth > 900) {
+
       setTimeout(() => {
-        document.getElementById("locationBlock").classList.add("visible");
+        document
+          .getElementById("locationBlock")
+          .classList.add("visible");
       }, 900);
 
       setTimeout(() => {
-        document.getElementById("contactBlock").classList.add("visible");
-      }, 1200);
+        document
+          .getElementById("profileBlock")
+          .classList.add("visible");
+      }, 1100);
+
+      setTimeout(() => {
+        document
+          .getElementById("contactBlock")
+          .classList.add("visible");
+      }, 1300);
+
     }
   </script>
 
